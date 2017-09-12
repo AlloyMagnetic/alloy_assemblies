@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - assembly.assembly_type.hubspot_cta_embed
+    - assembly.assembly_type.hubspot_form_embed
     - field.storage.assembly.field_embed_code
-id: assembly.hubspot_cta_embed.field_embed_code
+id: assembly.hubspot_form_embed.field_embed_code
 field_name: field_embed_code
 entity_type: assembly
-bundle: hubspot_cta_embed
+bundle: hubspot_form_embed
 label: 'Embed Code'
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

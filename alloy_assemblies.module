@@ -17,13 +17,23 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       $hubspot_id = $ctas['hubspot_id'];
       $uuid = $ctas['uuid'];
     }
-    $variables['hubspot_id'] = $hubspot_id;
-    $variables['uuid'] = $uuid;
+
+    $variables['content']['cta'] = [
+      '#theme' => 'hubspot_cta',
+      '#hubspot_id' => $hubspot_id,
+      '#uuid' => $uuid,
+    ];
   }
 
   if ($type == 'hubspot_form_embed') {
-    $variables += alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
-    $variables['assembly_id'] = $assembly->get('uuid')->value;
+    $entity_id = $assembly->get('uuid')->value;
+    $form_vars = alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
+    $variables['content']['form'] = [
+      '#theme' => 'hubspot_form',
+      '#entity_id' => $entity_id,
+      '#portalid' => $form_vars['portalid'],
+      '#formid' => $form_vars['formid'],
+    ];
   }
 }
 
@@ -50,4 +60,25 @@ function alloy_assemblies_parse_hubspot_embed($embed) {
     'portalid' => isset($portal[1]) && !empty($portal[1]) ? $portal[1] : FALSE,
     'formid' => isset($formid[1]) && !empty($formid[1]) ? $formid[1] : FALSE,
   ];
+}
+
+function alloy_assemblies_theme($existing, $type, $theme, $path) {
+  $theme = [];
+  $theme['hubspot_form'] = [
+    'template' => 'hubspot-form',
+    'variables' => [
+      'entity_id' => NULL,
+      'portalid' => NULL,
+      'formid' => NULL
+    ],
+  ];
+  $theme['hubspot_cta'] = [
+    'template' => 'hubspot-cta',
+    'variables' => [
+      'hubspot_id' => NULL,
+      'uuid' => NULL,
+    ],
+  ];
+
+  return $theme;
 }

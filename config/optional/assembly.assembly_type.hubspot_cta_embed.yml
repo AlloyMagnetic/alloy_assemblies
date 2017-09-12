@@ -3,3 +3,6 @@ status: true
 dependencies: {  }
 id: hubspot_cta_embed
 label: 'Hubspot CTA Embed'
+description: null
+visual_styles: null
+new_revision: true

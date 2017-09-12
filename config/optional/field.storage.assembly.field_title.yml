@@ -3,8 +3,8 @@ status: true
 dependencies:
   module:
     - assembly
-id: assembly.field_hubspot_id
-field_name: field_hubspot_id
+id: assembly.field_title
+field_name: field_title
 entity_type: assembly
 type: string
 settings:
