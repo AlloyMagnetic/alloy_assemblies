@@ -1,7 +1,7 @@
 {
   "name": "alloy/alloy_assemblies",
   "type": "drupal-module",
-  "description": "Basic assemblies",
+  "description": "Basic starter assemblies",
   "keywords": ["Drupal"],
   "license": "Proprietary",
   "homepage": "https://code.kilpho.st/alloy/alloy-assemblies",
