@@ -1,0 +1,9 @@
+hubspot-ctas:
+  js:
+    //js.hscta.net/cta/current.js: {type: external}
+
+hubspot-forms:
+  js:
+    //js.hsforms.net/forms/v2.js: {type: external}
+    js/forms.js: {}
+

@@ -1,0 +1,7 @@
+name: Alloy CTAs
+type: module
+description: Default call to action assembly types
+core: 8.x
+package: Alloy
+dependencies:
+  - assembly

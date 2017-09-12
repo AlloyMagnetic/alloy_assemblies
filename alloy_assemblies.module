@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Contains alloy_assemblies.module.
+ */
+
+function alloy_assemblies_preprocess_assembly(&$variables) {
+  $assembly = $variables['elements']['#assembly'];
+  $type = $assembly->bundle();
+
+  if ($type == 'hubspot_cta_embed') {
+    $hubspot_id = $assembly->get('field_hubspot_id')->value;
+    $uuid = $assembly->get('field_hubspot_uuid')->value;
+    if ($embed = $assembly->get('field_embed_code')->value) {
+      $ctas = alloy_assemblies_hubspot_cta_from_embed($embed);
+      $hubspot_id = $ctas['hubspot_id'];
+      $uuid = $ctas['uuid'];
+    }
+    $variables['hubspot_id'] = $hubspot_id;
+    $variables['uuid'] = $uuid;
+  }
+
+  if ($type == 'hubspot_form_embed') {
+    $variables += alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
+    $variables['assembly_id'] = $assembly->get('uuid')->value;
+  }
+}
+
+/**
+ * Extract the CTA information from a HubSpot embed code.
+ */
+function alloy_assemblies_hubspot_cta_from_embed($embed) {
+  preg_match("/hbspt.cta.load\((.*)\)/", $embed, $matches);
+  if (!isset($matches[1]) || empty($matches[1])) {
+    return FALSE;
+  }
+  $data = json_decode('[' . str_replace("'", '"', $matches[1]) . ']' );
+  return array(
+    'hubspot_id' => $data[0],
+    'uuid' => $data[1],
+  );
+}
+
+function alloy_assemblies_parse_hubspot_embed($embed) {
+  preg_match('/portalid:\s*\'(\d+)\'/i', $embed, $portal);
+  preg_match('/formid:\s*\'([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\'/i', $embed, $formid);
+
+  return [
+    'portalid' => isset($portal[1]) && !empty($portal[1]) ? $portal[1] : FALSE,
+    'formid' => isset($formid[1]) && !empty($formid[1]) ? $formid[1] : FALSE,
+  ];
+}

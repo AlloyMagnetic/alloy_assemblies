@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.hubspot_cta_embed
+    - field.field.assembly.hubspot_cta_embed.field_embed_code
+    - field.field.assembly.hubspot_cta_embed.field_hubspot_id
+    - field.field.assembly.hubspot_cta_embed.field_hubspot_uuid
+id: assembly.hubspot_cta_embed.default
+targetEntityType: assembly
+bundle: hubspot_cta_embed
+mode: default
+content: {  }
+hidden:
+  field_embed_code: true
+  field_hubspot_id: true
+  field_hubspot_uuid: true
+  name: true
+  user_id: true
