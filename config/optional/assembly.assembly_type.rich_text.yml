@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: rich_text
+label: 'Rich Text'
+description: ''
+visual_styles: ''
+new_revision: true

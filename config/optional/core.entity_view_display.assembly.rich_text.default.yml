@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.rich_text
+    - field.field.assembly.rich_text.field_content
+    - field.field.assembly.rich_text.field_title
+  module:
+    - fences
+    - text
+id: assembly.rich_text.default
+targetEntityType: assembly
+bundle: rich_text
+mode: default
+content:
+  field_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden:
+  name: true
+  user_id: true
