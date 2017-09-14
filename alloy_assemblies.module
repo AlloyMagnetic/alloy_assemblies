@@ -35,6 +35,23 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       '#formid' => $form_vars['formid'],
     ];
   }
+
+  if ($type == 'columns') {
+    $columns = $assembly->get('field_column')->getValue();
+    $col_count = count($columns) > 4 ? 4 : count($columns);
+    $variables['column_span'] = '';
+    $variables['tablet_column_span'] = '';
+
+    if ($col_count) {
+      $variables['column_span'] = 12/count($columns);
+      $variables['tablet_column_span'] = $col_count > 1 ? 6 : 12;
+      $variables['columns'] = [];
+
+      foreach ($columns as $column) {
+        $variables['columns'][] = ['#markup' => $column['value']];
+      }
+    }
+  }
 }
 
 /**
@@ -81,4 +98,23 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
   ];
 
   return $theme;
+}
+
+function alloy_assemblies_theme_registry_alter(&$theme_registry) {
+  $path = drupal_get_path('module', 'alloy_assemblies');
+
+  // Assembly types with a default template
+  // defined in this module
+  $types = [
+    'columns',
+  ];
+
+  foreach ($types as $type) {
+    if (isset($theme_registry['assembly']) && !isset($theme_registry['assembly__' . $type])) {
+      $theme_registry['assembly__' . $type] = $theme_registry['assembly'];
+      $theme_registry['assembly__' . $type]['template'] = 'assembly--' . str_replace('_', '-', $type);
+      $theme_registry['assembly__' . $type]['theme_path'] = $path;
+      $theme_registry['assembly__' . $type]['path'] = $path . '/templates';
+    }
+  }
 }
