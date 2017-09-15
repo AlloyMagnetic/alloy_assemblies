@@ -1,0 +1,5 @@
+entity.tile.add_form:
+  route_name: entity.tile.add_form
+  title: 'Add Tile'
+  appears_on:
+    - entity.tile.collection

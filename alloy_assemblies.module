@@ -96,6 +96,11 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
       'uuid' => NULL,
     ],
   ];
+  $theme['tile'] = [
+    'render element' => 'elements',
+    'file' => 'tile.page.inc',
+    'template' => 'tile',
+  ];
 
   return $theme;
 }

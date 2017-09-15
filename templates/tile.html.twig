@@ -1,0 +1,34 @@
+{#
+/**
+ * @file tile.html.twig
+ * Default theme implementation to present Tile data.
+ *
+ * This template is used when viewing Tile pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_tile()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('tile') }}>
+
+  {% if tile_link %}
+  <a href="{{ tile_link }}">
+  {% endif %}
+    <div class="tile-inner-wrapper">
+      {% if content.field_image|render %}
+      <div class="tile-image" style="background-image: url({{ file_url(content.field_image['#items'].entity.uri.value) }}); background-position: {{ focal_point.x }}% {{ focal_point.y }}%;"></div>
+      {% endif %}
+      {% if content %}
+        {{- content|without('field_image', 'field_link') -}}
+      {% endif %}
+    </div>
+  {% if tile_link %}
+  </a>
+  {% endif %}
+</div>

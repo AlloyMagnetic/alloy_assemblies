@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.tiles
+    - field.storage.assembly.field_tiles
+id: assembly.tiles.field_tiles
+field_name: field_tiles
+entity_type: assembly
+bundle: tiles
+label: Tiles
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:tile'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,33 @@
+add tile entities:
+  title: 'Create new Tile entities'
+
+administer tile entities:
+  title: 'Administer Tile entities'
+  description: 'Allow to access the administration form to configure Tile entities.'
+  restrict access: true
+
+delete tile entities:
+  title: 'Delete Tile entities'
+
+edit tile entities:
+  title: 'Edit Tile entities'
+
+access tile overview:
+  title: 'Access the Tile overview page'
+
+view published tile entities:
+  title: 'View published Tile entities'
+
+view unpublished tile entities:
+  title: 'View unpublished Tile entities'
+
+view all tile revisions:
+  title: 'View all Tile revisions'
+
+revert all tile revisions:
+  title: 'Revert all Tile revisions'
+  description: 'Role requires permission <em>view Tile revisions</em> and <em>edit rights</em> for tile entities in question or <em>administer tile entities</em>.'
+
+delete all tile revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Tile revisions</em> and <em>delete rights</em> for tile entities in question or <em>administer tile entities</em>.'

@@ -6,10 +6,13 @@ dependencies:
     - assembly.assembly_type.hubspot_cta_embed
     - assembly.assembly_type.hubspot_form_embed
     - assembly.assembly_type.rich_text
+    - assembly.assembly_type.tiles
     - field.storage.node.field_sections
     - node.type.page
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: HZHaP3pRHLKuvkRAsiWlbkJ8HE5V1i4HXB21BDzRO0U
 id: node.page.field_sections
 field_name: field_sections
 entity_type: node
@@ -28,6 +31,7 @@ settings:
       hubspot_cta_embed: hubspot_cta_embed
       hubspot_form_embed: hubspot_form_embed
       rich_text: rich_text
+      tiles: tiles
     sort:
       field: _none
     auto_create: false

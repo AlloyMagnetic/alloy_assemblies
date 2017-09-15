@@ -1,0 +1,27 @@
+# Tile routing definition
+tile.settings_tab:
+  route_name: tile.settings
+  title: 'Settings'
+  base_route: tile.settings
+
+entity.tile.canonical:
+  route_name: entity.tile.canonical
+  base_route: entity.tile.canonical
+  title: 'View'
+
+entity.tile.edit_form:
+  route_name: entity.tile.edit_form
+  base_route: entity.tile.canonical
+  title: 'Edit'
+
+entity.tile.version_history:
+  route_name: entity.tile.version_history
+  base_route: entity.tile.canonical
+  title: 'Revisions'
+
+entity.tile.delete_form:
+  route_name:  entity.tile.delete_form
+  base_route:  entity.tile.canonical
+  title: Delete
+  weight: 10
+
