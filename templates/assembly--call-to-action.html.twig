@@ -1,0 +1,42 @@
+{#
+/**
+ * @file assembly.html.twig
+ * Default theme implementation to present Assembly data.
+ *
+ * This template is used when viewing Assembly pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_assembly()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('assembly') }}>
+  {% if content.field_text|render and content.field_link|render %}
+  <div class="make-row">
+    <div class="left-col">
+  {% endif %}
+
+  {% if content %}
+    {{- content|without('field_link') -}}
+  {% endif %}
+
+  {% if content.field_text|render and content.field_link|render %}
+    </div>
+    <div class="right-col">
+  {% endif %}
+
+  {% if content.field_link|render %}
+    <a href="{{ content.field_link[0]['#url_title'] }}" class="btn btn-default"> {{ content.field_link[0]['#title'] }}</a>
+  {% endif %}
+
+  {% if content.field_text|render and content.field_link|render %}
+    </div>
+  </div>
+  {% endif %}
+
+</div>

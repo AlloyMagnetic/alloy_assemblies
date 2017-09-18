@@ -9,8 +9,6 @@ dependencies:
     - inline_entity_form
     - path
     - text
-_core:
-  default_config_hash: P77Ianq2o0crQu766vrD-7GAgcfatL1UXbEFpw18ZuI
 id: node.page.default
 targetEntityType: node
 bundle: page

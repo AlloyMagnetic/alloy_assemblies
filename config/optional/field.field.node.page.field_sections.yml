@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - assembly.assembly_type.call_to_action
     - assembly.assembly_type.columns
     - assembly.assembly_type.hubspot_cta_embed
     - assembly.assembly_type.hubspot_form_embed
@@ -11,8 +12,6 @@ dependencies:
     - node.type.page
   module:
     - entity_reference_revisions
-_core:
-  default_config_hash: HZHaP3pRHLKuvkRAsiWlbkJ8HE5V1i4HXB21BDzRO0U
 id: node.page.field_sections
 field_name: field_sections
 entity_type: node
@@ -27,6 +26,7 @@ settings:
   handler: 'default:assembly'
   handler_settings:
     target_bundles:
+      call_to_action: call_to_action
       columns: columns
       hubspot_cta_embed: hubspot_cta_embed
       hubspot_form_embed: hubspot_form_embed

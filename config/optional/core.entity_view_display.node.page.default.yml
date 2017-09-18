@@ -9,8 +9,6 @@ dependencies:
     - entity_reference_revisions
     - text
     - user
-_core:
-  default_config_hash: RUpsuneJDTooE3ohALj4nJfFSL4FnoIzd9DaXUU8Ej4
 id: node.page.default
 targetEntityType: node
 bundle: page

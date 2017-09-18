@@ -112,6 +112,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
   // defined in this module
   $types = [
     'columns',
+    'call_to_action',
   ];
 
   foreach ($types as $type) {
