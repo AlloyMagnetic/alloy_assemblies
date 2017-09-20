@@ -2,21 +2,23 @@
 
 Drupal.behaviors.alloyAssembliesHsForms = {
   attach: function(context, settings) {
-    $('[data-hs-form-target]').once('alloyAssembliesHsForms').each(function() {
+    $('[data-hs-form]').once('alloyAssembliesHsForms').each(function() {
       var $this = $(this),
         portal = $this.data('hs-portal-id'),
-        formid = $this.data('hs-form-id'),
-        target = $this.data('hs-form-target')
+        formid = $this.data('hs-form-id')
         ;
 
+      var id = $this.attr('id') || 'hsform' + Math.random().toString(36).substr(2, 10);
+      $this.attr('id', id);
       hbspt.forms.create({
         css: '',
         portalId: portal,
         formId: formid,
-        target: '[data-hs-form-target="' + target + '"]'
+        target: '#' + id
       });
 
     });
   }
 }
+
 })(jQuery, hbspt, window, Drupal, drupalSettings);

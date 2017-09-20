@@ -1,5 +1,6 @@
 <?php
 
+use \Drupal\Component\Utility\Random;
 /**
  * @file
  * Contains alloy_assemblies.module.
@@ -10,30 +11,20 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
   $type = $assembly->bundle();
 
   if ($type == 'hubspot_cta_embed') {
-    $hubspot_id = $assembly->get('field_hubspot_id')->value;
-    $uuid = $assembly->get('field_hubspot_uuid')->value;
     if ($embed = $assembly->get('field_embed_code')->value) {
-      $ctas = alloy_assemblies_hubspot_cta_from_embed($embed);
-      $hubspot_id = $ctas['hubspot_id'];
-      $uuid = $ctas['uuid'];
+      $variables['content']['hubspot_cta'] = [
+        '#theme' => 'hubspot_cta',
+      ] + alloy_assemblies_hubspot_cta_from_embed($embed);
     }
 
-    $variables['content']['cta'] = [
-      '#theme' => 'hubspot_cta',
-      '#hubspot_id' => $hubspot_id,
-      '#uuid' => $uuid,
-    ];
   }
 
   if ($type == 'hubspot_form_embed') {
-    $entity_id = $assembly->get('uuid')->value;
-    $form_vars = alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
-    $variables['content']['form'] = [
+    $random = new Random();
+    $variables['content']['hubspot_form'] = [
       '#theme' => 'hubspot_form',
-      '#entity_id' => $entity_id,
-      '#portalid' => $form_vars['portalid'],
-      '#formid' => $form_vars['formid'],
-    ];
+    ] + alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
+    $variables['assembly_id'] = $assembly->get('uuid')->value;
   }
 
   if ($type == 'columns') {
@@ -64,8 +55,8 @@ function alloy_assemblies_hubspot_cta_from_embed($embed) {
   }
   $data = json_decode('[' . str_replace("'", '"', $matches[1]) . ']' );
   return array(
-    'hubspot_id' => $data[0],
-    'uuid' => $data[1],
+    '#hubspot_id' => $data[0],
+    '#uuid' => $data[1],
   );
 }
 
@@ -74,8 +65,8 @@ function alloy_assemblies_parse_hubspot_embed($embed) {
   preg_match('/formid:\s*\'([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\'/i', $embed, $formid);
 
   return [
-    'portalid' => isset($portal[1]) && !empty($portal[1]) ? $portal[1] : FALSE,
-    'formid' => isset($formid[1]) && !empty($formid[1]) ? $formid[1] : FALSE,
+    '#portalid' => isset($portal[1]) && !empty($portal[1]) ? $portal[1] : FALSE,
+    '#formid' => isset($formid[1]) && !empty($formid[1]) ? $formid[1] : FALSE,
   ];
 }
 
@@ -84,7 +75,6 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
   $theme['hubspot_form'] = [
     'template' => 'hubspot-form',
     'variables' => [
-      'entity_id' => NULL,
       'portalid' => NULL,
       'formid' => NULL
     ],

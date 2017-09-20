@@ -1,3 +1,4 @@
+{{ attach_library('alloy_assemblies/hubspot-ctas') }}
 <div class="hubspot-cta">
   <span class="hs-cta-wrapper" id="hs-cta-wrapper-{{ uuid|raw }}">
   <span class="hs-cta-node hs-cta-{{ uuid|raw }}" id="hs-cta-{{ uuid|raw }}">
@@ -6,6 +7,5 @@
     <img class="hs-cta-img" id="hs-cta-img-{{ uuid|raw }}" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/{{ hubspot_id|raw }}/{{ uuid|raw }}.png" />
   </a>
 
-  <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
   <script type="text/javascript">hbspt.cta.load('{{ hubspot_id|raw }}', '{{uuid|raw}}');</script>
 </div>

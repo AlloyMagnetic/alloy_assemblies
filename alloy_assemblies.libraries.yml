@@ -1,4 +1,5 @@
 hubspot-ctas:
+  header: true
   js:
     //js.hscta.net/cta/current.js: {type: external}
 
