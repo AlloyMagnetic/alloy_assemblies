@@ -8,3 +8,10 @@ hubspot-forms:
     //js.hsforms.net/forms/v2.js: {type: external}
     js/forms.js: {}
 
+swipebox:
+  css:
+    theme:
+      css/swipebox.css: {}
+  js:
+    js/jquery.swipebox.min.js: {}
+    js/swipebox.js: {}

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: photo_gallery
+label: 'Photo Gallery'
+description: ''
+visual_styles: "no-top-padding|No top padding|Remove extra space above this section\r\nno-bottom-padding|No bottom padding|Remove extra space below this section"
+new_revision: true

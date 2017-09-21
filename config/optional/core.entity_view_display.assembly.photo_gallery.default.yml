@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.photo_gallery
+    - field.field.assembly.photo_gallery.field_images
+    - field.field.assembly.photo_gallery.field_title
+  module:
+    - fences
+    - image
+id: assembly.photo_gallery.default
+targetEntityType: assembly
+bundle: photo_gallery
+mode: default
+content:
+  field_images:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: file
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: swipebox
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_title: true
+  user_id: true
