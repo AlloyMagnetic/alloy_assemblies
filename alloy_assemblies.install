@@ -4,10 +4,6 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 
 function alloy_assemblies_install() {
-  // Add or remove the body field, as needed.
-  $field_storage = FieldStorageConfig::loadByName('node', 'field_sections');
-  $field = FieldConfig::loadByName('node', 'page', 'field_sections');
-
   // Assign widget settings for the 'default' form mode.
   entity_get_form_display('node', 'page', 'default')
     ->setComponent('field_sections', array(
