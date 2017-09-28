@@ -6,3 +6,4 @@ package: Alloy
 dependencies:
   - assembly
   - crop
+  - focal_point
