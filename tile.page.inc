@@ -30,26 +30,8 @@ function template_preprocess_tile(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
-  // Get file object
-  $image_value = $tile->get('field_image')->getValue();
-  if ($image_value) {
-    $file_id = $image_value[0]['target_id'];
-    $file = File::load($file_id);
-    $variables['focal_point'] = FALSE;
 
-    // Get focal point
-    $width = $image_value[0]['width'];
-    $height = $image_value[0]['height'];
-    if ($file) {
-      $crop_type = \Drupal::config('focal_point.settings')->get('crop_type');
-      $crop = Crop::findCrop($file->getFileUri(), $crop_type);
-      if ($crop) {
-        $anchor = \Drupal::service('focal_point.manager')
-          ->absoluteToRelative($crop->x->value, $crop->y->value, $width, $height);
-        $variables['focal_point'] = $anchor;
-      }
-    }
-  }
+  $variables['focal_point'] = alloy_assemblies_get_focal_point($tile, 'field_image');
 
   $variables['tile_link'] = FALSE;
   $link = $tile->get('field_link')->getValue();
