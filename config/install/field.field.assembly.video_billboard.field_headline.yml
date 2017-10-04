@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.video_billboard
+    - field.storage.assembly.field_headline
+id: assembly.video_billboard.field_headline
+field_name: field_headline
+entity_type: assembly
+bundle: video_billboard
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

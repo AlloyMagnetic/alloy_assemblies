@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: video_billboard
+label: 'Video Billboard'
+description: ''
+visual_styles: 'short|Short|A short billboard'
+new_revision: true

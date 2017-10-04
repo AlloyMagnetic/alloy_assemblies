@@ -121,6 +121,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
     'call_to_action',
     'photo_gallery',
     'image_billboard',
+    'video_billboard',
   ];
 
   foreach ($types as $type) {

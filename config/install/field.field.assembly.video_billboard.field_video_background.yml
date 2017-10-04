@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.video_billboard
+    - field.storage.assembly.field_video_background
+  module:
+    - video
+id: assembly.video_billboard.field_video_background
+field_name: field_video_background
+entity_type: assembly
+bundle: video_billboard
+label: 'Video Background'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: ''
+  file_directory: 'videos/[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: video
