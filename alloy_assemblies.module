@@ -6,6 +6,7 @@ use Drupal\crop\Entity\Crop;
 use Drupal\file\Entity\File;
 use Drupal\Core\Url;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 /**
  * @file
@@ -15,6 +16,16 @@ use Drupal\Core\Entity\EntityInterface;
 function alloy_assemblies_preprocess_assembly(&$variables) {
   $assembly = $variables['elements']['#assembly'];
   $type = $assembly->bundle();
+
+  if ($type == 'image_billboard') {
+    $image_value = $assembly->get('field_image_background')->getValue();
+    $variables['focal_point'] = FALSE;
+
+    if ($image_value) {
+      $file_id = $image_value[0]['target_id'];
+      $variables['focal_point'] = alloy_assemblies_get_focal_point($assembly, $file_id);
+    }
+  }
 
   if ($type == 'hubspot_cta_embed') {
     if ($embed = $assembly->get('field_embed_code')->value) {
@@ -109,6 +120,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
     'columns',
     'call_to_action',
     'photo_gallery',
+    'image_billboard',
   ];
 
   foreach ($types as $type) {
@@ -121,26 +133,20 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
   }
 }
 
-function alloy_assemblies_get_focal_point(EntityInterface $entity, string $field_name) {
-  // Get file object
-  $image_value = $entity->get($field_name)->getValue();
-  $focal_point = FALSE;
+function alloy_assemblies_get_focal_point(EntityInterface $entity, $file_id) {
+  $file = File::load($file_id);
 
-  if ($image_value) {
-    $file_id = $image_value[0]['target_id'];
-    $file = File::load($file_id);
-
-    // Get focal point
-    $width = $image_value[0]['width'];
-    $height = $image_value[0]['height'];
-    if ($file) {
-      $crop_type = \Drupal::config('focal_point.settings')->get('crop_type');
-      $crop = Crop::findCrop($file->getFileUri(), $crop_type);
-      if ($crop) {
-        $anchor = \Drupal::service('focal_point.manager')
-          ->absoluteToRelative($crop->x->value, $crop->y->value, $width, $height);
-        $focal_point = $anchor;
-      }
+  // Get focal point
+  $image = \Drupal::service('image.factory')->get($file->getFileUri());
+  $width = $image->getWidth();
+  $height = $image->getHeight();
+  if ($file) {
+    $crop_type = \Drupal::config('focal_point.settings')->get('crop_type');
+    $crop = Crop::findCrop($file->getFileUri(), $crop_type);
+    if ($crop) {
+      $anchor = \Drupal::service('focal_point.manager')
+        ->absoluteToRelative($crop->x->value, $crop->y->value, $width, $height);
+      $focal_point = $anchor;
     }
   }
 

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies: {  }
+name: billboard
+label: Billboard
+effects:
+  efb1282e-93ad-4b62-aaea-7fd70818032f:
+    uuid: efb1282e-93ad-4b62-aaea-7fd70818032f
+    id: image_scale
+    weight: 1
+    data:
+      width: 1600
+      height: null
+      upscale: false
+  ecd30ddb-bfdb-4eb8-8da3-320c7600d388:
+    uuid: ecd30ddb-bfdb-4eb8-8da3-320c7600d388
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 1600
+      upscale: false

@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.image_billboard
+    - field.field.assembly.image_billboard.field_headline
+    - field.field.assembly.image_billboard.field_image_background
+    - image.style.thumbnail
+  module:
+    - focal_point
+id: assembly.image_billboard.default
+targetEntityType: assembly
+bundle: image_billboard
+mode: default
+content:
+  field_headline:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image_background:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

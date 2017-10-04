@@ -31,7 +31,13 @@ function template_preprocess_tile(array &$variables) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 
-  $variables['focal_point'] = alloy_assemblies_get_focal_point($tile, 'field_image');
+  $image_value = $entity->get($field_name)->getValue();
+  $variables['focal_point'] = FALSE;
+
+  if ($image_value) {
+    $file_id = $image_value[0]['target_id'];
+    $variables['focal_point'] = alloy_assemblies_get_focal_point($tile, $file_id);
+  }
 
   $variables['tile_link'] = FALSE;
   $link = $tile->get('field_link')->getValue();
