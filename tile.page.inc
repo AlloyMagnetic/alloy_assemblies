@@ -31,17 +31,20 @@ function template_preprocess_tile(array &$variables) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 
-  $image_value = $entity->get('field_image')->getValue();
   $variables['focal_point'] = FALSE;
-
-  if ($image_value) {
-    $file_id = $image_value[0]['target_id'];
-    $variables['focal_point'] = alloy_assemblies_get_focal_point($tile, $file_id);
+  if ($tile->hasField('field_image')) {
+    $image_value = $entity->get('field_image')->getValue();
+    if ($image_value) {
+      $file_id = $image_value[0]['target_id'];
+      $variables['focal_point'] = alloy_assemblies_get_focal_point($tile, $file_id);
+    }
   }
 
   $variables['tile_link'] = FALSE;
-  $link = $tile->get('field_link')->getValue();
-  if (is_array($link) && !empty($link)) {
-    $variables['tile_link'] = Url::fromUri($link[0]['uri'])->toString();
+  if ($tile->hasField('field_link')) {
+    $link = $tile->get('field_link')->getValue();
+    if (is_array($link) && !empty($link)) {
+      $variables['tile_link'] = Url::fromUri($link[0]['uri'])->toString();
+    }
   }
 }

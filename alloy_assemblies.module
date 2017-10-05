@@ -18,12 +18,14 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
   $type = $assembly->bundle();
 
   if ($type == 'image_billboard') {
-    $image_value = $assembly->get('field_image_background')->getValue();
-    $variables['focal_point'] = FALSE;
+    if ($assembly->hasField('field_image_background')) {
+      $image_value = $assembly->get('field_image_background')->getValue();
+      $variables['focal_point'] = FALSE;
 
-    if ($image_value) {
-      $file_id = $image_value[0]['target_id'];
-      $variables['focal_point'] = alloy_assemblies_get_focal_point($assembly, $file_id);
+      if ($image_value) {
+        $file_id = $image_value[0]['target_id'];
+        $variables['focal_point'] = alloy_assemblies_get_focal_point($assembly, $file_id);
+      }
     }
   }
 
