@@ -31,7 +31,7 @@ function template_preprocess_tile(array &$variables) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 
-  $image_value = $entity->get($field_name)->getValue();
+  $image_value = $entity->get('field_image')->getValue();
   $variables['focal_point'] = FALSE;
 
   if ($image_value) {
