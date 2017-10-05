@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: image_with_content
+label: 'Image with Content'
+description: ''
+visual_styles: "right|Image on Right|Show the image in the right column\r\nwhite-text|White text|Light text for a dark background\r\nbg-primary|Primary Background|A background using the primary color\r\nbg-secondary|Secondary Background|A background using the secondary color\r\nbg-tertiary|Tertiary Background|A background using the tertiary color"
+new_revision: true

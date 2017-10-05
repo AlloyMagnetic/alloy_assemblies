@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.image_with_content
+    - entity_browser.browser.browse_files_modal
+    - field.field.assembly.image_with_content.field_background_image
+    - field.field.assembly.image_with_content.field_content
+    - field.field.assembly.image_with_content.field_image
+    - image.style.thumbnail
+  module:
+    - entity_browser
+    - focal_point
+    - text
+id: assembly.image_with_content.default
+targetEntityType: assembly
+bundle: image_with_content
+mode: default
+content:
+  field_background_image:
+    weight: 27
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
+  field_content:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 3
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

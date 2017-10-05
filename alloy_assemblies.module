@@ -7,6 +7,7 @@ use Drupal\file\Entity\File;
 use Drupal\Core\Url;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * @file
@@ -25,6 +26,21 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       if ($image_value) {
         $file_id = $image_value[0]['target_id'];
         $variables['focal_point'] = alloy_assemblies_get_focal_point($assembly, $file_id);
+      }
+    }
+  }
+
+  if ($type == 'image_with_content') {
+    if ($assembly->hasField('field_background_image')) {
+      $image_value = $assembly->get('field_background_image')->getValue();
+      $variables['focal_point'] = FALSE;
+
+      if ($image_value) {
+        $file_id = $image_value[0]['target_id'];
+        $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
+        $uri = File::load($file_id)->getFileUri();
+        $url = ImageStyle::load('billboard')->buildUrl($uri);
+        $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $focal_point['x'] . '% ' . $focal_point['y'] . '%;');
       }
     }
   }
@@ -124,6 +140,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
     'photo_gallery',
     'image_billboard',
     'video_billboard',
+    'image_with_content',
   ];
 
   foreach ($types as $type) {
