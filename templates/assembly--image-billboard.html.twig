@@ -16,21 +16,23 @@
  */
 #}
 <div{{ attributes.addClass('assembly billboard') }}>
-  {% if content.field_image_background|render %}
-    <div class="background" style="background-image: url({{ file_url(content.field_image_background['#items'].entity.uri.value) }}); background-position: {{ focal_point.x }}% {{ focal_point.y }}%;"></div>
-  {% endif %}
-  {% if content|without('field_image_background')|render %}
-    <div class="billboard-content">
-      <div class="billboard-content-inner">
-        <div class="container">
-          {% if content.field_headline %}
-            <p class="headline h2">{{ content.field_headline }}</p>
-          {% endif %}
-          {% if content %}
-            {{- content|without('field_image_background', 'field_headline') -}}
-          {% endif %}
+  <div class="container">
+    {% if content.field_image_background|render %}
+      <div class="background" style="background-image: url({{ file_url(content.field_image_background['#items'].entity.uri.value) }}); background-position: {{ focal_point.x }}% {{ focal_point.y }}%;"></div>
+    {% endif %}
+    {% if content|without('field_image_background')|render %}
+      <div class="billboard-content">
+        <div class="billboard-content-inner">
+          <div class="container">
+            {% if content.field_headline %}
+              <p class="headline h2">{{ content.field_headline }}</p>
+            {% endif %}
+            {% if content %}
+              {{- content|without('field_image_background', 'field_headline') -}}
+            {% endif %}
+          </div>
         </div>
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
 </div>

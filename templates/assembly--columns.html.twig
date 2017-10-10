@@ -16,17 +16,19 @@
  */
 #}
 <div{{ attributes }}>
-  {% if content %}
-    {{- content|without('field_column') -}}
-  {% endif %}
+  <div class="container">
+    {% if content %}
+      {{- content|without('field_column') -}}
+    {% endif %}
 
-  {% if content.field_column|render %}
-  <div class="row">
-    {% for column in columns %}
-      <div class="col-sm-{{ tablet_column_span }} col-md-{{ column_span }} column">
-        {{ column }}
-      </div>
-    {% endfor %}
+    {% if content.field_column|render %}
+    <div class="row">
+      {% for column in columns %}
+        <div class="col-sm-{{ tablet_column_span }} col-md-{{ column_span }} column">
+          {{ column }}
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 </div>

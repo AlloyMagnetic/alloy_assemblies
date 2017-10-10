@@ -16,27 +16,28 @@
  */
 #}
 <div{{ attributes.addClass('assembly') }}>
-  {% if content.field_text|render and content.field_link|render %}
-  <div class="make-row">
-    <div class="left-col">
-  {% endif %}
+  <div class="container">
+    {% if content.field_text|render and content.field_link|render %}
+    <div class="make-row">
+      <div class="left-col">
+    {% endif %}
 
-  {% if content %}
-    {{- content|without('field_link') -}}
-  {% endif %}
+    {% if content %}
+      {{- content|without('field_link') -}}
+    {% endif %}
 
-  {% if content.field_text|render and content.field_link|render %}
+    {% if content.field_text|render and content.field_link|render %}
+      </div>
+      <div class="right-col">
+    {% endif %}
+
+    {% if content.field_link|render %}
+      <a href="{{ content.field_link[0]['#url_title'] }}" class="btn btn-default"> {{ content.field_link[0]['#title'] }}</a>
+    {% endif %}
+
+    {% if content.field_text|render and content.field_link|render %}
+      </div>
     </div>
-    <div class="right-col">
-  {% endif %}
-
-  {% if content.field_link|render %}
-    <a href="{{ content.field_link[0]['#url_title'] }}" class="btn btn-default"> {{ content.field_link[0]['#title'] }}</a>
-  {% endif %}
-
-  {% if content.field_text|render and content.field_link|render %}
-    </div>
+    {% endif %}
   </div>
-  {% endif %}
-
 </div>
