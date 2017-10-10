@@ -31,3 +31,36 @@ revert all tile revisions:
 delete all tile revisions:
   title: 'Delete all revisions'
   description: 'Role requires permission to <em>view Tile revisions</em> and <em>delete rights</em> for tile entities in question or <em>administer tile entities</em>.'
+add logo entities:
+  title: 'Create new Logo entities'
+
+administer logo entities:
+  title: 'Administer Logo entities'
+  description: 'Allow to access the administration form to configure Logo entities.'
+  restrict access: true
+
+delete logo entities:
+  title: 'Delete Logo entities'
+
+edit logo entities:
+  title: 'Edit Logo entities'
+
+access logo overview:
+  title: 'Access the Logo overview page'
+
+view published logo entities:
+  title: 'View published Logo entities'
+
+view unpublished logo entities:
+  title: 'View unpublished Logo entities'
+
+view all logo revisions:
+  title: 'View all Logo revisions'
+
+revert all logo revisions:
+  title: 'Revert all Logo revisions'
+  description: 'Role requires permission <em>view Logo revisions</em> and <em>edit rights</em> for logo entities in question or <em>administer logo entities</em>.'
+
+delete all logo revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Logo revisions</em> and <em>delete rights</em> for logo entities in question or <em>administer logo entities</em>.'

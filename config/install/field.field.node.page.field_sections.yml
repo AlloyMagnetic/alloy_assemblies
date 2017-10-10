@@ -7,6 +7,7 @@ dependencies:
     - assembly.assembly_type.hubspot_cta_embed
     - assembly.assembly_type.hubspot_form_embed
     - assembly.assembly_type.image_with_content
+    - assembly.assembly_type.logos
     - assembly.assembly_type.rich_text
     - assembly.assembly_type.tiles
     - field.storage.node.field_sections
@@ -32,6 +33,7 @@ settings:
       hubspot_cta_embed: hubspot_cta_embed
       hubspot_form_embed: hubspot_form_embed
       image_with_content: image_with_content
+      logos: logos
       rich_text: rich_text
       tiles: tiles
     sort:

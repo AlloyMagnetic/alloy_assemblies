@@ -126,6 +126,11 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
     'file' => 'tile.page.inc',
     'template' => 'tile',
   ];
+  $theme['logo'] = [
+    'render element' => 'elements',
+    'file' => 'logo.page.inc',
+    'template' => 'logo',
+  ];
   return $theme;
 }
 
@@ -141,6 +146,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
     'image_billboard',
     'video_billboard',
     'image_with_content',
+    'logos',
   ];
 
   foreach ($types as $type) {

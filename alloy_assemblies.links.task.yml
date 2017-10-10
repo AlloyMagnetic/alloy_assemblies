@@ -25,3 +25,30 @@ entity.tile.delete_form:
   title: Delete
   weight: 10
 
+# Logo routing definition
+logo.settings_tab:
+  route_name: logo.settings
+  title: 'Settings'
+  base_route: logo.settings
+
+entity.logo.canonical:
+  route_name: entity.logo.canonical
+  base_route: entity.logo.canonical
+  title: 'View'
+
+entity.logo.edit_form:
+  route_name: entity.logo.edit_form
+  base_route: entity.logo.canonical
+  title: 'Edit'
+
+entity.logo.version_history:
+  route_name: entity.logo.version_history
+  base_route: entity.logo.canonical
+  title: 'Revisions'
+
+entity.logo.delete_form:
+  route_name:  entity.logo.delete_form
+  base_route:  entity.logo.canonical
+  title: Delete
+  weight: 10
+

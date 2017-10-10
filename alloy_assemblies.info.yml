@@ -8,3 +8,4 @@ dependencies:
   - crop
   - focal_point
   - video
+  - linkit_widget

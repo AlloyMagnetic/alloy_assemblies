@@ -12,3 +12,17 @@ tile.admin.structure.settings:
   description: 'Configure Tile entities'
   route_name: tile.settings
   parent: system.admin_structure
+
+# Logo menu items definition
+entity.logo.collection:
+  title: 'Logo list'
+  route_name: entity.logo.collection
+  description: 'List Logo entities'
+  parent: system.admin_structure
+  weight: 100
+
+logo.admin.structure.settings:
+  title: Logo settings
+  description: 'Configure Logo entities'
+  route_name: logo.settings
+  parent: system.admin_structure

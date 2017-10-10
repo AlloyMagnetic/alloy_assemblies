@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files_modal
+    - field.field.logo.logo.field_logo_image
+    - field.field.logo.logo.field_logo_link
+  module:
+    - alloy_assemblies
+    - entity_browser
+    - linkit_widget
+id: logo.logo.default
+targetEntityType: logo
+bundle: logo
+mode: default
+content:
+  field_logo_image:
+    weight: 1
+    settings:
+      entity_browser: browse_files_modal
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  field_logo_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      linkit_profile: default
+    third_party_settings: {  }
+    type: linkit_widget
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true
