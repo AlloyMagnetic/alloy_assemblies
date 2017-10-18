@@ -38,3 +38,15 @@ function alloy_assemblies_install() {
     ->save();
 }
 
+/**
+ * Remove hubspot ID and hubspot UUID fields.
+ */
+function alloy_assemblies_update_8001(&$sandbox) {
+  foreach (['field_hubspot_id', 'field_hubspot_uuid'] as $field) {
+    $field = FieldStorageConfig::loadByName('assembly', $field);
+    if ($field) {
+      $field->delete();
+    }
+  }
+
+}
