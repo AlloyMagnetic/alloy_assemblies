@@ -50,3 +50,7 @@ function alloy_assemblies_update_8001(&$sandbox) {
   }
 
 }
+
+function alloy_assemblies_update_8002(&$sandbox) {
+  \Drupal::keyValue('system.schema')->delete('alloy_ctas');
+}
