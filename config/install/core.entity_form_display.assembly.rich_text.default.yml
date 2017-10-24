@@ -3,15 +3,28 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.rich_text
+    - field.field.assembly.rich_text.field_background_image
     - field.field.assembly.rich_text.field_content
     - field.field.assembly.rich_text.field_title
+    - image.style.thumbnail
   module:
+    - focal_point
     - text
 id: assembly.rich_text.default
 targetEntityType: assembly
 bundle: rich_text
 mode: default
 content:
+  field_background_image:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+    type: image_focal_point
+    region: content
   field_content:
     weight: 4
     settings:

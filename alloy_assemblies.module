@@ -30,18 +30,16 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     }
   }
 
-  if ($type == 'image_with_content') {
-    if ($assembly->hasField('field_background_image')) {
-      $image_value = $assembly->get('field_background_image')->getValue();
-      $variables['focal_point'] = FALSE;
+  if ($assembly->hasField('field_background_image')) {
+    $image_value = $assembly->get('field_background_image')->getValue();
+    $variables['focal_point'] = FALSE;
 
-      if ($image_value) {
-        $file_id = $image_value[0]['target_id'];
-        $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
-        $uri = File::load($file_id)->getFileUri();
-        $url = ImageStyle::load('billboard')->buildUrl($uri);
-        $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $focal_point['x'] . '% ' . $focal_point['y'] . '%;');
-      }
+    if ($image_value) {
+      $file_id = $image_value[0]['target_id'];
+      $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
+      $uri = File::load($file_id)->getFileUri();
+      $url = ImageStyle::load('billboard')->buildUrl($uri);
+      $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $focal_point['x'] . '% ' . $focal_point['y'] . '%;');
     }
   }
 

@@ -3,16 +3,35 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.rich_text
+    - field.field.assembly.rich_text.field_background_image
     - field.field.assembly.rich_text.field_content
     - field.field.assembly.rich_text.field_title
+    - image.style.billboard
   module:
     - fences
+    - image
     - text
 id: assembly.rich_text.default
 targetEntityType: assembly
 bundle: rich_text
 mode: default
 content:
+  field_background_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: billboard
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: image
+    region: content
   field_content:
     weight: 1
     label: hidden
