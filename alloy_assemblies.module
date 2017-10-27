@@ -129,6 +129,11 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
     'file' => 'logo.page.inc',
     'template' => 'logo',
   ];
+  $theme['text_tile'] = [
+    'render element' => 'elements',
+    'file' => 'text_tile.page.inc',
+    'template' => 'text-tile',
+  ];
   return $theme;
 }
 

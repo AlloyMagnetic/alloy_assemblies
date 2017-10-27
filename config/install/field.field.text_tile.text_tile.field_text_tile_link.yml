@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.text_tile.field_text_tile_link
+  module:
+    - alloy_assemblies
+    - link
+id: text_tile.text_tile.field_text_tile_link
+field_name: field_text_tile_link
+entity_type: text_tile
+bundle: text_tile
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

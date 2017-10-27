@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.tiles_with_content
+    - field.storage.assembly.field_tiles_with_content
+id: assembly.tiles_with_content.field_tiles_with_content
+field_name: field_tiles_with_content
+entity_type: assembly
+bundle: tiles_with_content
+label: Tiles
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:text_tile'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

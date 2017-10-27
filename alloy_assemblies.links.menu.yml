@@ -26,3 +26,17 @@ logo.admin.structure.settings:
   description: 'Configure Logo entities'
   route_name: logo.settings
   parent: system.admin_structure
+
+# Text tile menu items definition
+entity.text_tile.collection:
+  title: 'Text tile list'
+  route_name: entity.text_tile.collection
+  description: 'List Text tile entities'
+  parent: system.admin_structure
+  weight: 100
+
+text_tile.admin.structure.settings:
+  title: Text tile settings
+  description: 'Configure Text tile entities'
+  route_name: text_tile.settings
+  parent: system.admin_structure

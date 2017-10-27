@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: tiles_with_content
+label: 'Tiles with Content'
+description: ''
+visual_styles: ''
+new_revision: true

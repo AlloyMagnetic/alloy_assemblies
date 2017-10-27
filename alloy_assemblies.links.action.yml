@@ -8,3 +8,8 @@ entity.logo.add_form:
   title: 'Add Logo'
   appears_on:
     - entity.logo.collection
+entity.text_tile.add_form:
+  route_name: entity.text_tile.add_form
+  title: 'Add Text tile'
+  appears_on:
+    - entity.text_tile.collection

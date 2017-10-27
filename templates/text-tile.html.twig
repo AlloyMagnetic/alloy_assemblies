@@ -1,0 +1,44 @@
+{#
+/**
+ * @file text_tile.html.twig
+ * Default theme implementation to present Text tile data.
+ *
+ * This template is used when viewing Text tile pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_text_tile()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('text-tile') }}>
+  {% if tile_link %}
+  <a href="{{ tile_link }}" class="text-tile-wrapper">
+  {% else %}
+  <div class="text-tile-wrapper">
+  {% endif %}
+
+  {% if content.field_text_tile_image|render %}
+  {{ content.field_text_tile_image }}
+  {% endif %}
+
+  {% if content.field_text_tile_title|render %}
+    <h2 class="text-tile-title">{{ content.field_text_tile_title }}</h2>
+  {% endif %}
+
+  {% if content %}
+  <div class="text-tile-content">
+    {{- content|without('field_text_tile_title', 'field_text_tile_link', 'field_text_tile_image') -}}
+  </div>
+  {% endif %}
+
+  {% if tile_link %}
+  </a>
+  {% else %}
+  </div>
+  {% endif %}
+</div>

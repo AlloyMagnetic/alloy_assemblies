@@ -52,3 +52,30 @@ entity.logo.delete_form:
   title: Delete
   weight: 10
 
+# Text tile routing definition
+text_tile.settings_tab:
+  route_name: text_tile.settings
+  title: 'Settings'
+  base_route: text_tile.settings
+
+entity.text_tile.canonical:
+  route_name: entity.text_tile.canonical
+  base_route: entity.text_tile.canonical
+  title: 'View'
+
+entity.text_tile.edit_form:
+  route_name: entity.text_tile.edit_form
+  base_route: entity.text_tile.canonical
+  title: 'Edit'
+
+entity.text_tile.version_history:
+  route_name: entity.text_tile.version_history
+  base_route: entity.text_tile.canonical
+  title: 'Revisions'
+
+entity.text_tile.delete_form:
+  route_name:  entity.text_tile.delete_form
+  base_route:  entity.text_tile.canonical
+  title: Delete
+  weight: 10
+

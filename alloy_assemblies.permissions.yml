@@ -64,3 +64,36 @@ revert all logo revisions:
 delete all logo revisions:
   title: 'Delete all revisions'
   description: 'Role requires permission to <em>view Logo revisions</em> and <em>delete rights</em> for logo entities in question or <em>administer logo entities</em>.'
+add text tile entities:
+  title: 'Create new Text tile entities'
+
+administer text tile entities:
+  title: 'Administer Text tile entities'
+  description: 'Allow to access the administration form to configure Text tile entities.'
+  restrict access: true
+
+delete text tile entities:
+  title: 'Delete Text tile entities'
+
+edit text tile entities:
+  title: 'Edit Text tile entities'
+
+access text tile overview:
+  title: 'Access the Text tile overview page'
+
+view published text tile entities:
+  title: 'View published Text tile entities'
+
+view unpublished text tile entities:
+  title: 'View unpublished Text tile entities'
+
+view all text tile revisions:
+  title: 'View all Text tile revisions'
+
+revert all text tile revisions:
+  title: 'Revert all Text tile revisions'
+  description: 'Role requires permission <em>view Text tile revisions</em> and <em>edit rights</em> for text tile entities in question or <em>administer text tile entities</em>.'
+
+delete all text tile revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Text tile revisions</em> and <em>delete rights</em> for text tile entities in question or <em>administer text tile entities</em>.'

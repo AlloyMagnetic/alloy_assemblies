@@ -23,7 +23,10 @@
     {% endif %}
 
     {% if content %}
-      {{- content|without('field_link') -}}
+      {% if content.field_text|render %}
+      <div class="h3">{{ content.field_text }}</div>
+      {% endif %}
+      {{- content|without('field_link')|without('field_text') -}}
     {% endif %}
 
     {% if content.field_text|render and content.field_link|render %}

@@ -10,6 +10,7 @@ dependencies:
     - assembly.assembly_type.logos
     - assembly.assembly_type.rich_text
     - assembly.assembly_type.tiles
+    - assembly.assembly_type.tiles_with_content
     - field.storage.node.field_sections
     - node.type.page
   module:
@@ -36,6 +37,7 @@ settings:
       logos: logos
       rich_text: rich_text
       tiles: tiles
+      tiles_with_text: tiles_with_text
     sort:
       field: _none
     auto_create: false
