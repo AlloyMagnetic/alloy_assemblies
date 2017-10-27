@@ -84,7 +84,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
 function alloy_assemblies_hubspot_cta_from_embed($embed) {
   preg_match("/hbspt.cta.load\((.*)\)/", $embed, $matches);
   if (!isset($matches[1]) || empty($matches[1])) {
-    return FALSE;
+    return [];
   }
   $data = json_decode('[' . str_replace("'", '"', $matches[1]) . ']' );
   return array(
