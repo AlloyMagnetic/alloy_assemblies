@@ -59,9 +59,11 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     ] + alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
     $variables['assembly_id'] = $assembly->get('uuid')->value;
   }
+}
 
-  if ($type == 'columns') {
-    $columns = $assembly->get('field_column')->getValue();
+function alloy_assemblies_preprocess_field(&$variables) {
+  if ($variables['field_name'] == 'field_column') {
+    $columns = $variables['items'];
     $col_count = count($columns) > 4 ? 4 : count($columns);
     $variables['column_span'] = '';
     $variables['tablet_column_span'] = '';
@@ -69,11 +71,6 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     if ($col_count) {
       $variables['column_span'] = 12/count($columns);
       $variables['tablet_column_span'] = $col_count > 1 ? 6 : 12;
-      $variables['columns'] = [];
-
-      foreach ($columns as $column) {
-        $variables['columns'][] = ['#markup' => $column['value']];
-      }
     }
   }
 }
@@ -159,6 +156,12 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
       $theme_registry['assembly__' . $type]['theme_path'] = $path;
       $theme_registry['assembly__' . $type]['path'] = $path . '/templates';
     }
+  }
+  if (isset($theme_registry['field']) && !isset($theme_registry['field__field_column'])) {
+    $theme_registry['field__field_column'] = $theme_registry['field'];
+    $theme_registry['field__field_column']['template'] = 'field--field-column';
+    $theme_registry['field__field_column']['theme_path'] = $path;
+    $theme_registry['field__field_column']['path'] = $path . '/templates';
   }
 }
 
