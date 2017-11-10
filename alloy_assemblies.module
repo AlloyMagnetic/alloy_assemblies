@@ -49,7 +49,6 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
         '#theme' => 'hubspot_cta',
       ] + alloy_assemblies_hubspot_cta_from_embed($embed);
     }
-
   }
 
   if ($type == 'hubspot_form_embed') {
@@ -69,7 +68,7 @@ function alloy_assemblies_preprocess_field(&$variables) {
     $variables['tablet_column_span'] = '';
 
     if ($col_count) {
-      $variables['column_span'] = 12/count($columns);
+      $variables['column_span'] = 12/$col_count;
       $variables['tablet_column_span'] = $col_count > 1 ? 6 : 12;
     }
   }
