@@ -4,5 +4,5 @@ dependencies: {  }
 id: tiles
 label: Tiles
 description: ''
-visual_styles: ''
+visual_styles: "bg-primary|Primary background|A background using the theme's primary color\r\nbg-secondary|Secondary background|A background using the theme's secondary color\r\nbg-tertiary|Tertiary background|A background using the theme's tertiary color\r\nwhite-text|White text|White text for use on dark backgrounds\r\nmake-narrow|Make narrow|Make the container narrow\r\nborder-top|Top border|A border on top of the assembly\r\nborder-bottom|Bottom border|A border below the assembly\r\nno-top-padding|No top padding|No space above the assembly\r\nno-bottom-padding|No bottom padding|No space below the assembly"
 new_revision: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.content_with_aside
+    - field.storage.assembly.field_aside
+  module:
+    - text
+id: assembly.content_with_aside.field_aside
+field_name: field_aside
+entity_type: assembly
+bundle: content_with_aside
+label: Aside
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

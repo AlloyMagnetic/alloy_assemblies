@@ -146,6 +146,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
   $types = [
     'columns',
     'call_to_action',
+    'content_with_aside',
     'photo_gallery',
     'image_billboard',
     'video_billboard',
