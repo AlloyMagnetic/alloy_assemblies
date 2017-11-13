@@ -18,18 +18,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
   $assembly = $variables['elements']['#assembly'];
   $type = $assembly->bundle();
 
-  if ($type == 'image_billboard') {
-    if ($assembly->hasField('field_image_background')) {
-      $image_value = $assembly->get('field_image_background')->getValue();
-      $variables['focal_point'] = FALSE;
-
-      if ($image_value) {
-        $file_id = $image_value[0]['target_id'];
-        $variables['focal_point'] = alloy_assemblies_get_focal_point($assembly, $file_id);
-      }
-    }
-  }
-
+  $variables['focal_point'] = FALSE;
   if ($assembly->hasField('field_background_image')) {
     $image_value = $assembly->get('field_background_image')->getValue();
     $variables['focal_point'] = FALSE;
@@ -40,6 +29,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       $uri = File::load($file_id)->getFileUri();
       $url = ImageStyle::load('billboard')->buildUrl($uri);
       $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $focal_point['x'] . '% ' . $focal_point['y'] . '%;');
+      $variables['focal_point'] = $focal_point;
     }
   }
 

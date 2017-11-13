@@ -17,9 +17,6 @@
 #}
 <div{{ attributes.addClass('assembly billboard') }}>
   <div class="container">
-    {% if content.field_image_background|render %}
-      <div class="background" style="background-image: url({{ file_url(content.field_image_background['#items'].entity.uri.value) }}); background-position: {{ focal_point.x }}% {{ focal_point.y }}%;"></div>
-    {% endif %}
     <div class="billboard-content">
       {% if content|without('field_image_background')|render %}
       <div class="billboard-content-inner">
