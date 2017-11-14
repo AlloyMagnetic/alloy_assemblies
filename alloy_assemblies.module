@@ -172,6 +172,7 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
 
 function alloy_assemblies_get_focal_point(EntityInterface $entity, $file_id) {
   $file = File::load($file_id);
+  $focal_point = FALSE;
 
   // Get focal point
   $image = \Drupal::service('image.factory')->get($file->getFileUri());
