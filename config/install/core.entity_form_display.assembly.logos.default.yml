@@ -4,6 +4,7 @@ dependencies:
   config:
     - assembly.assembly_type.logos
     - field.field.assembly.logos.field_logos
+    - field.field.assembly.logos.field_show_page_title
     - field.field.assembly.logos.field_title
   module:
     - inline_entity_form
@@ -13,7 +14,7 @@ bundle: logos
 mode: default
 content:
   field_logos:
-    weight: 26
+    weight: 5
     settings:
       form_mode: default
       label_singular: ''
@@ -26,6 +27,13 @@ content:
       collapsed: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
+  field_show_page_title:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_title:
     weight: 3

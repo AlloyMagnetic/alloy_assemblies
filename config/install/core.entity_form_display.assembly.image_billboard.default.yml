@@ -5,6 +5,7 @@ dependencies:
     - assembly.assembly_type.image_billboard
     - field.field.assembly.image_billboard.field_headline
     - field.field.assembly.image_billboard.field_image_background
+    - field.field.assembly.image_billboard.field_show_page_title
     - image.style.thumbnail
   module:
     - focal_point
@@ -14,7 +15,7 @@ bundle: image_billboard
 mode: default
 content:
   field_headline:
-    weight: 26
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -30,6 +31,13 @@ content:
       offsets: '50,50'
     third_party_settings: {  }
     type: image_focal_point
+    region: content
+  field_show_page_title:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   name:
     type: string_textfield

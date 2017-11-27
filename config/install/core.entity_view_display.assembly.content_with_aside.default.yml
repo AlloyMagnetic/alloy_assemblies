@@ -6,6 +6,7 @@ dependencies:
     - field.field.assembly.content_with_aside.field_aside
     - field.field.assembly.content_with_aside.field_background_image
     - field.field.assembly.content_with_aside.field_content
+    - field.field.assembly.content_with_aside.field_show_page_title
     - field.field.assembly.content_with_aside.field_title
   module:
     - fences
@@ -69,12 +70,13 @@ content:
       fences:
         fences_field_tag: none
         fences_field_classes: ''
-        fences_field_item_tag: none
-        fences_field_item_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: section-title
         fences_label_tag: none
         fences_label_classes: ''
     type: string
     region: content
 hidden:
+  field_show_page_title: true
   name: true
   user_id: true

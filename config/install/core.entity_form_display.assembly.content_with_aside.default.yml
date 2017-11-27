@@ -6,6 +6,7 @@ dependencies:
     - field.field.assembly.content_with_aside.field_aside
     - field.field.assembly.content_with_aside.field_background_image
     - field.field.assembly.content_with_aside.field_content
+    - field.field.assembly.content_with_aside.field_show_page_title
     - field.field.assembly.content_with_aside.field_title
     - image.style.thumbnail
   module:
@@ -17,7 +18,7 @@ bundle: content_with_aside
 mode: default
 content:
   field_aside:
-    weight: 6
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -35,12 +36,19 @@ content:
     type: image_focal_point
     region: content
   field_content:
-    weight: 5
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_show_page_title:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   field_title:
     weight: 4

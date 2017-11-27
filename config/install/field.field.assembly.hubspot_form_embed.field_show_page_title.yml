@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.hubspot_form_embed
+    - field.storage.assembly.field_show_page_title
+id: assembly.hubspot_form_embed.field_show_page_title
+field_name: field_show_page_title
+entity_type: assembly
+bundle: hubspot_form_embed
+label: 'Show Page Title in Assembly'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

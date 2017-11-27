@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.logos
+    - field.storage.assembly.field_show_page_title
+id: assembly.logos.field_show_page_title
+field_name: field_show_page_title
+entity_type: assembly
+bundle: logos
+label: 'Show Page Title in Assembly'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

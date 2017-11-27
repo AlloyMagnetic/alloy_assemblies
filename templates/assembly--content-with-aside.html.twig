@@ -26,9 +26,8 @@
       <div class="col-sm-8">
     {% endif %}
 
-    {% if content.field_title|render %}
-    <h2 class="section-title">{{ content.field_title }}</h2>
-    {% endif %}
+    {{ content.field_title }}
+
     {% if content %}
       {{- content|without('field_aside', 'field_title', 'field_background_image') -}}
     {% endif %}

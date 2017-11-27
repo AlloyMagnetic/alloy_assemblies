@@ -4,6 +4,7 @@ dependencies:
   config:
     - assembly.assembly_type.video_billboard
     - field.field.assembly.video_billboard.field_headline
+    - field.field.assembly.video_billboard.field_show_page_title
     - field.field.assembly.video_billboard.field_video_background
   module:
     - video
@@ -20,8 +21,15 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_show_page_title:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_video_background:
-    weight: 26
+    weight: 5
     settings:
       file_extensions: 'mp4 ogv webm mov'
       file_directory: 'video-thumbnails/[date:custom:Y]-[date:custom:m]'

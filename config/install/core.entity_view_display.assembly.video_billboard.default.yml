@@ -4,6 +4,7 @@ dependencies:
   config:
     - assembly.assembly_type.video_billboard
     - field.field.assembly.video_billboard.field_headline
+    - field.field.assembly.video_billboard.field_show_page_title
     - field.field.assembly.video_billboard.field_video_background
   module:
     - fences
@@ -22,9 +23,9 @@ content:
       fences:
         fences_field_tag: none
         fences_field_classes: ''
-        fences_field_item_tag: none
-        fences_field_item_classes: ''
-        fences_label_tag: div
+        fences_field_item_tag: p
+        fences_field_item_classes: 'headline h2'
+        fences_label_tag: none
         fences_label_classes: ''
     type: string
     region: content
@@ -50,5 +51,6 @@ content:
     type: video_player_list
     region: content
 hidden:
+  field_show_page_title: true
   name: true
   user_id: true

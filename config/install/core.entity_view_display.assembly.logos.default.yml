@@ -4,6 +4,7 @@ dependencies:
   config:
     - assembly.assembly_type.logos
     - field.field.assembly.logos.field_logos
+    - field.field.assembly.logos.field_show_page_title
     - field.field.assembly.logos.field_title
   module:
     - fences
@@ -37,12 +38,13 @@ content:
       fences:
         fences_field_tag: none
         fences_field_classes: ''
-        fences_field_item_tag: none
+        fences_field_item_tag: h2
         fences_field_item_classes: ''
-        fences_label_tag: div
+        fences_label_tag: none
         fences_label_classes: ''
     type: string
     region: content
 hidden:
+  field_show_page_title: true
   name: true
   user_id: true

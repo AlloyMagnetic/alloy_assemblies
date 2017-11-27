@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.tiles_with_content
+    - field.field.assembly.tiles_with_content.field_show_page_title
     - field.field.assembly.tiles_with_content.field_tiles_with_content
     - field.field.assembly.tiles_with_content.field_title
   module:
@@ -35,14 +36,15 @@ content:
       link_to_entity: false
     third_party_settings:
       fences:
-        fences_field_tag: h2
-        fences_field_classes: section-title
-        fences_field_item_tag: none
-        fences_field_item_classes: ''
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: section-title
         fences_label_tag: none
         fences_label_classes: ''
     type: string
     region: content
 hidden:
+  field_show_page_title: true
   name: true
   user_id: true

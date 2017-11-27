@@ -24,9 +24,7 @@
       {% if content|without('field_image_background')|render %}
       <div class="billboard-content-inner">
         <div class="container">
-          {% if content.field_headline %}
-            <p class="headline h2">{{ content.field_headline }}</p>
-          {% endif %}
+          {{ content.field_headline }}
           {% if content %}
             {{- content|without('field_image_background', 'field_headline') -}}
           {% endif %}

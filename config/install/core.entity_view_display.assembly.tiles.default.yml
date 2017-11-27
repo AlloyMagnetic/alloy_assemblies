@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.tiles
+    - field.field.assembly.tiles.field_show_page_title
     - field.field.assembly.tiles.field_tiles
     - field.field.assembly.tiles.field_title
   module:
@@ -31,11 +32,12 @@ content:
         fences_field_tag: none
         fences_field_classes: ''
         fences_field_item_tag: h2
-        fences_field_item_classes: ''
+        fences_field_item_classes: section-title
         fences_label_tag: div
         fences_label_classes: ''
     type: string
     region: content
 hidden:
+  field_show_page_title: true
   name: true
   user_id: true
