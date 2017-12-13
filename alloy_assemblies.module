@@ -45,6 +45,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       $url = ImageStyle::load('billboard')->buildUrl($uri);
       $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $focal_point['x'] . '% ' . $focal_point['y'] . '%;');
       $variables['focal_point'] = $focal_point;
+      $variables['attributes']->addClass('has-background');
     }
   }
 
