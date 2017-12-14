@@ -16,21 +16,19 @@
  */
 #}
 <div{{ attributes.addClass('assembly billboard') }}>
-  <div class="container">
-    {% if content.field_image_background|render %}
-      <div class="background" style="background-image: url({{ file_url(content.field_image_background['#items'].entity.uri.value) }}); background-position: {{ focal_point_x }}% {{ focal_point_y }}%;"></div>
-    {% endif %}
-    <div class="billboard-content">
-      {% if content|without('field_image_background')|render %}
-      <div class="billboard-content-inner">
-        <div class="container">
-          {{ content.field_headline }}
-          {% if content %}
-            {{- content|without('field_image_background', 'field_headline') -}}
-          {% endif %}
-        </div>
+  {% if content.field_image_background|render %}
+    <div class="background" style="background-image: url({{ background_image_url }}); background-position: {{ focal_point_x }}% {{ focal_point_y }}%;"></div>
+  {% endif %}
+  <div class="billboard-content">
+    {% if content|without('field_image_background')|render %}
+    <div class="billboard-content-inner">
+      <div class="container">
+        {{ content.field_headline }}
+        {% if content %}
+          {{- content|without('field_image_background', 'field_headline') -}}
+        {% endif %}
       </div>
-      {% endif %}
     </div>
+    {% endif %}
   </div>
 </div>
