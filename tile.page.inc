@@ -11,6 +11,7 @@ use Drupal\Core\Render\Element;
 use Drupal\crop\Entity\Crop;
 use Drupal\file\Entity\File;
 use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Prepares variables for Tile templates.
@@ -36,6 +37,8 @@ function template_preprocess_tile(array &$variables) {
     $image_value = $tile->get('field_image')->getValue();
     if ($image_value) {
       $file_id = $image_value[0]['target_id'];
+      $uri = File::load($file_id)->getFileUri();
+      $variables['background_image_url'] = ImageStyle::load('large')->buildUrl($uri);
       $variables['focal_point'] = alloy_assemblies_get_focal_point($tile, $file_id);
     }
   }
