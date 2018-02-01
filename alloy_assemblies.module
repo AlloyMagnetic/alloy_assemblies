@@ -55,9 +55,19 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
 
   if ($type == 'hubspot_cta_embed') {
     if ($embed = $assembly->get('field_embed_code')->value) {
-      $variables['content']['hubspot_cta'] = [
-        '#theme' => 'hubspot_cta',
-      ] + alloy_assemblies_hubspot_cta_from_embed($embed);
+      $hs_cta = alloy_assemblies_hubspot_cta_from_embed($embed);
+      if ($hs_cta && is_array($hs_cta)) {
+        $variables['content']['hubspot_cta'] = $hs_cta + ['#theme' => 'hubspot_cta'];
+      }
+      else {
+        $hs_form = alloy_assemblies_parse_hubspot_embed($embed);
+        if ($hs_form && is_array($hs_form)) {
+          drupal_set_message('Embed code is for a Hubspot Form, but assembly type is Hubspot CTA');
+        }
+        else {
+          drupal_set_message('Invalid embed code for Hubspot CTA');
+        }
+      }
     }
   }
 
