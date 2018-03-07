@@ -3,41 +3,6 @@
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 
-function alloy_assemblies_install() {
-  // Assign widget settings for the 'default' form mode.
-  entity_get_form_display('node', 'page', 'default')
-    ->setComponent('field_sections', array(
-      'type' => 'inline_entity_form_complex',
-      'weight' => 7,
-      'region' => 'content',
-      'settings' => [
-        'form_mode' => 'default',
-        'label_singular' => '',
-        'label_plural' => '',
-        'allow_new' => true,
-        'allow_existing' => true,
-        'match_operator' => CONTAINS,
-        'override_labels' => false,
-        'collapsible' => false,
-        'collapsed' => false,
-      ]
-    ))
-    ->save();
-
-  entity_get_display('node', 'page', 'default')
-    ->setComponent('field_sections', array(
-      'type' => 'entity_reference_revisions_entity_view',
-      'weight' => 2,
-      'region' => 'content',
-      'label' => 'hidden',
-      'settings' =>  [
-        'view_mode' => 'default',
-        'link' => '',
-      ],
-    ))
-    ->save();
-}
-
 /**
  * Remove hubspot ID and hubspot UUID fields.
  */

@@ -9,3 +9,6 @@ dependencies:
   - focal_point
   - video
   - linkit_widget
+  - imce
+  - fences
+  - link
