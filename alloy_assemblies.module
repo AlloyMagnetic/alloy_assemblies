@@ -110,12 +110,12 @@ function alloy_assemblies_hubspot_cta_from_embed($embed) {
 }
 
 function alloy_assemblies_parse_hubspot_embed($embed) {
-  preg_match('/portalid:\s*\'(\d+)\'/i', $embed, $portal);
-  preg_match('/formid:\s*\'([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})\'/i', $embed, $formid);
+  preg_match('/portalId:\s*(\'|\")(\d+)(\'|\")/i', $embed, $portal);
+  preg_match('/formid:\s*(\'|\")([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(\'|\")/i', $embed, $formid);
 
   return [
-    '#portalid' => isset($portal[1]) && !empty($portal[1]) ? $portal[1] : FALSE,
-    '#formid' => isset($formid[1]) && !empty($formid[1]) ? $formid[1] : FALSE,
+    '#portalid' => isset($portal[2]) && !empty($portal[2]) ? $portal[2] : FALSE,
+    '#formid' => isset($formid[2]) && !empty($formid[2]) ? $formid[2] : FALSE,
   ];
 }
 
