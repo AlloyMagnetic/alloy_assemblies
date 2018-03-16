@@ -75,6 +75,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     $random = new Random();
     $variables['content']['hubspot_form'] = [
       '#theme' => 'hubspot_form',
+      '#weight' => 100,
     ] + alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
     $variables['assembly_id'] = $assembly->get('uuid')->value;
   }
