@@ -22,6 +22,8 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     if ($assembly->hasField('field_image_background')) {
       $image_value = $assembly->get('field_image_background')->getValue();
       $variables['focal_point'] = FALSE;
+      $variables['focal_point_x'] = 0;
+      $variables['focal_point_y'] = 0;
       if ($image_value) {
         $file_id = $image_value[0]['target_id'];
         $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
@@ -37,6 +39,8 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
           $x = $focal_point['x'];
           $y = $focal_point['y'];
         }
+        $variables['focal_point_x'] = $x;
+        $variables['focal_point_y'] = $y;
       }
     }
   }
@@ -45,6 +49,8 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
   if ($assembly->hasField('field_background_image')) {
     $image_value = $assembly->get('field_background_image')->getValue();
     $variables['focal_point'] = FALSE;
+    $variables['focal_point_x'] = 0;
+    $variables['focal_point_y'] = 0;
 
     if ($image_value) {
       $file_id = $image_value[0]['target_id'];
@@ -57,6 +63,8 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
         $x = $focal_point['x'];
         $y = $focal_point['y'];
       }
+      $variables['focal_point_x'] = $x;
+      $variables['focal_point_y'] = $y;
       $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $x . '% ' . $y . '%;');
       $variables['focal_point'] = $focal_point;
       $variables['attributes']->addClass('has-background');
