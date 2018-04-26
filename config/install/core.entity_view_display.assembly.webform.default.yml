@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.webform
+    - field.field.assembly.webform.field_content
+    - field.field.assembly.webform.field_form
+    - field.field.assembly.webform.field_title
+  module:
+    - fences
+    - text
+    - webform
+id: assembly.webform.default
+targetEntityType: assembly
+bundle: webform
+mode: default
+content:
+  field_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: form-content
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: text_default
+    region: content
+  field_form:
+    weight: 2
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: none
+        fences_field_item_classes: ''
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: webform_entity_reference_entity_view
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      fences:
+        fences_field_tag: none
+        fences_field_classes: ''
+        fences_field_item_tag: h2
+        fences_field_item_classes: 'form-title h3 section-title'
+        fences_label_tag: none
+        fences_label_classes: ''
+    type: string
+    region: content
+hidden:
+  name: true
+  user_id: true

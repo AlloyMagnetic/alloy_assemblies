@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.webform
+    - field.field.assembly.webform.field_content
+    - field.field.assembly.webform.field_form
+    - field.field.assembly.webform.field_title
+  module:
+    - text
+    - webform
+id: assembly.webform.default
+targetEntityType: assembly
+bundle: webform
+mode: default
+content:
+  field_content:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_form:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+  field_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

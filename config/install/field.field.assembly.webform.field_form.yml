@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.webform
+    - field.storage.assembly.field_form
+  module:
+    - webform
+id: assembly.webform.field_form
+field_name: field_form
+entity_type: assembly
+bundle: webform
+label: Form
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  default_data: ''
+  status: open
+  open: ''
+  close: ''
+field_type: webform
