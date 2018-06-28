@@ -3,13 +3,14 @@ status: true
 dependencies:
   module:
     - assembly
-id: assembly.field_form
-field_name: field_form
+    - webform
+id: assembly.field_webform
+field_name: field_webform
 entity_type: assembly
-type: entity_reference
+type: webform
 settings:
-  target_type: assembly
-module: core
+  target_type: webform
+module: webform
 locked: false
 cardinality: 1
 translatable: true

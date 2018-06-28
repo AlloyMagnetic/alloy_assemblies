@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: form
+label: Form
+description: ''
+visual_styles: "no-top-padding|No top padding|No space above the assembly\r\nno-bottom-padding|No bottom padding|No space below the assembly"
+new_revision: true
