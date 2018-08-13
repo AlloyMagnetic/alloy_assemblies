@@ -1,4 +1,9 @@
 # Tile routing definition
+tile.admin:
+  title: Tiles
+  route_name: entity.tile.collection
+  base_route: system.admin_content
+
 tile.settings_tab:
   route_name: tile.settings
   title: 'Settings'
@@ -53,6 +58,11 @@ entity.logo.delete_form:
   weight: 10
 
 # Text tile routing definition
+text_tile.admin:
+  title: Text Tiles
+  route_name: entity.text_tile.collection
+  base_route: system.admin_content
+
 text_tile.settings_tab:
   route_name: text_tile.settings
   title: 'Settings'
