@@ -3,24 +3,39 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.photo_gallery
+    - field.field.assembly.photo_gallery.field_content
     - field.field.assembly.photo_gallery.field_images
     - field.field.assembly.photo_gallery.field_show_page_title
     - field.field.assembly.photo_gallery.field_title
     - image.style.thumbnail
   module:
-    - image
+    - focal_point
+    - imce
+    - text
 id: assembly.photo_gallery.default
 targetEntityType: assembly
 bundle: photo_gallery
 mode: default
 content:
-  field_images:
+  field_content:
     weight: 5
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: image_image
+    type: text_textarea
+    region: content
+  field_images:
+    weight: 6
+    settings:
+      preview_image_style: thumbnail
+      preview_link: true
+      offsets: '50,50'
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: false
+    type: image_focal_point
     region: content
   field_show_page_title:
     weight: 4

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: photo_gallery_image
+label: 'Photo Gallery Image'
+effects:
+  5d8c361a-7324-45f4-9a45-f1500068db4e:
+    uuid: 5d8c361a-7324-45f4-9a45-f1500068db4e
+    id: focal_point_scale_and_crop
+    weight: -9
+    data:
+      width: 800
+      height: 450
+      crop_type: focal_point
+  89d92204-d10e-4067-85a2-561a91234367:
+    uuid: 89d92204-d10e-4067-85a2-561a91234367
+    id: image_scale
+    weight: -10
+    data:
+      width: 800
+      height: null
+      upscale: true

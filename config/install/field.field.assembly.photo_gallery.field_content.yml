@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.photo_gallery
+    - field.storage.assembly.field_content
+  module:
+    - text
+id: assembly.photo_gallery.field_content
+field_name: field_content
+entity_type: assembly
+bundle: photo_gallery
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
