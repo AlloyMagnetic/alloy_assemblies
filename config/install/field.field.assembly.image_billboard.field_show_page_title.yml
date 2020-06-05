@@ -17,6 +17,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: 'On'
+  on_label: 'Allow billboard to provide title and hide page title'
   off_label: 'Off'
 field_type: boolean
