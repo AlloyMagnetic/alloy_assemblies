@@ -1,8 +1,12 @@
+uuid: 65f92a36-6f16-407d-b776-bfdc68383921
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: vj9VyVp9FWQG6mgz0jjc8aY85PD7Rkuk0eNAX30-dXg
 id: photo_gallery
 label: 'Photo Gallery'
 description: ''
-visual_styles: "no-top-padding|No top padding|Remove extra space above this section\r\nno-bottom-padding|No bottom padding|Remove extra space below this section"
+icon: null
+visual_styles: "vs-no-space-before|No Space Before|Eliminates space before assembly\r\nvs-no-space-after|No Space After|Eliminates space after assembly\r\nvs-border-top|Top Border|Adds a border to the top of the assembly\r\nvs-border-bottom|Bottom Border|Adds a border to the bottom of the assembly\r\nvs-bg-primary|Primary Background|Adds a background color to the assembly\r\nvs-bg-primary-compact|Primary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-bg-secondary|Secondary Background|Adds a background color to the assembly\r\nvs-bg-secondary-compact|Secondary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-bg-tertiary|Tertiary Background|Adds a background color to the assembly\r\nvs-bg-tertiary-compact|Tertiary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-make-narrow|Make narrow|Make the container narrow\r\n"
 new_revision: true

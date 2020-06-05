@@ -1,8 +1,12 @@
+uuid: 2a1ad4a0-3618-40fc-9522-e7d364c81e98
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: ZxC2nRmtyro_a9m5JWs1avFaGjXgg3v299OEwQfa_CE
 id: hubspot_cta_embed
 label: 'Hubspot CTA Embed'
-description: null
-visual_styles: null
+description: ''
+icon: null
+visual_styles: "vs-no-space-before|No Space Before|Eliminates space before assembly\r\nvs-no-space-after|No Space After|Eliminates space after assembly\r\nvs-border-top|Top Border|Adds a border to the top of the assembly\r\nvs-border-bottom|Bottom Border|Adds a border to the bottom of the assembly\r\nvs-bg-primary|Primary Background|Adds a background color to the assembly\r\nvs-bg-primary-compact|Primary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-bg-secondary|Secondary Background|Adds a background color to the assembly\r\nvs-bg-secondary-compact|Secondary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-bg-tertiary|Tertiary Background|Adds a background color to the assembly\r\nvs-bg-tertiary-compact|Tertiary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-make-narrow|Make narrow|Make the container narrow\r\n"
 new_revision: true

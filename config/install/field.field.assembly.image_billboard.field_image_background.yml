@@ -1,3 +1,4 @@
+uuid: 1da9686c-05d6-4a54-850b-0797d842b895
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - field.storage.assembly.field_image_background
   module:
     - image
+_core:
+  default_config_hash: kIgJZ8sj-eXjXc844gVHK8fpRXS6NJvSvnZepA8Ov-A
 id: assembly.image_billboard.field_image_background
 field_name: field_image_background
 entity_type: assembly

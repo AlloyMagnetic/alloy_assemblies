@@ -1,8 +1,12 @@
+uuid: 063aad04-2d44-490b-9fbb-33c406c55aea
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: DX-ws6ZD5VtRECwNnVmNerkegEhYf15vfJwEMVGuBr0
 id: image_with_content
 label: 'Image with Content'
 description: ''
-visual_styles: "right|Image on Right|Show the image in the right column\r\nwhite-text|White text|Light text for a dark background\r\nbg-primary|Primary Background|A background using the primary color\r\nbg-secondary|Secondary Background|A background using the secondary color\r\nbg-tertiary|Tertiary Background|A background using the tertiary color"
+icon: null
+visual_styles: "vs-no-space-before|No Space Before|Eliminates space before assembly\r\nvs-no-space-after|No Space After|Eliminates space after assembly\r\nvs-border-top|Top Border|Adds a border to the top of the assembly\r\nvs-border-bottom|Bottom Border|Adds a border to the bottom of the assembly\r\nvs-bg-primary|Primary Background|Adds a background color to the assembly\r\nvs-bg-primary-compact|Primary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-bg-secondary|Secondary Background|Adds a background color to the assembly\r\nvs-bg-secondary-compact|Secondary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-bg-tertiary|Tertiary Background|Adds a background color to the assembly\r\nvs-bg-tertiary-compact|Tertiary Background Compact|Adds a background color to the assembly but no additional padding\r\nvs-make-narrow|Make narrow|Make the container narrow\r\nvs-reverse|Reverse Layout|Reverses column order\r\nvs-big-image|Large Image|Provides a much larger image\r\n"
 new_revision: true
