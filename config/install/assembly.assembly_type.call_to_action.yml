@@ -1,9 +1,6 @@
-uuid: 85304590-bae3-4767-ad23-7dcb7e805ded
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: UFv9jVslAFVkwYtvVxDlscWK4qNNKfE5xCJKZnEgVwI
 id: call_to_action
 label: 'Call to Action'
 description: ''

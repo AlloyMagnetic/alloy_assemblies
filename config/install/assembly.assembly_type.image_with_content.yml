@@ -1,9 +1,6 @@
-uuid: 063aad04-2d44-490b-9fbb-33c406c55aea
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: DX-ws6ZD5VtRECwNnVmNerkegEhYf15vfJwEMVGuBr0
 id: image_with_content
 label: 'Image with Content'
 description: ''

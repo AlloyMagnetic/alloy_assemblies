@@ -1,9 +1,6 @@
-uuid: 9e69f223-6bbd-48da-bc62-d67fe80ecf4f
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: EI4MndEF_Kf0jECw25NnzupK8mnOACqmdpI3UvOZ_4M
 id: video_billboard
 label: 'Video Billboard'
 description: ''

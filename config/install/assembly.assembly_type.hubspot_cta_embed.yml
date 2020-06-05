@@ -1,9 +1,6 @@
-uuid: 2a1ad4a0-3618-40fc-9522-e7d364c81e98
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: ZxC2nRmtyro_a9m5JWs1avFaGjXgg3v299OEwQfa_CE
 id: hubspot_cta_embed
 label: 'Hubspot CTA Embed'
 description: ''

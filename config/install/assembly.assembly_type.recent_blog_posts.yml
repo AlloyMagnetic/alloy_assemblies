@@ -1,9 +1,6 @@
-uuid: 2a6d4751-e0f0-48f4-b936-3dc90ea13029
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: h9Ff1YcuFl9OPlvIAtCXWN0u5jcIzWteFBKWUu02MAQ
 id: recent_blog_posts
 label: 'Recent Blog Posts'
 description: 'Shows 3 recent blog posts, optionally filtered by blog, category or author.'

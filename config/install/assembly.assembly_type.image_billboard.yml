@@ -1,9 +1,6 @@
-uuid: 039716bf-a713-42be-9ed8-ea909b4234fc
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: WTwAf3MFpysCkkOkH8ucAiAT3QNqT-E3HhgqXWku9zs
 id: image_billboard
 label: 'Image Billboard'
 description: ''

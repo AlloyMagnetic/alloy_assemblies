@@ -1,9 +1,6 @@
-uuid: 48a72dd2-e406-4eaa-af1c-a3e928becd3c
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: lItGO9DlT_jMSuykyww7-NX0Ew_Cz4qgFuLeayzwHR8
 id: logos
 label: Logos
 description: ''

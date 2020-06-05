@@ -1,9 +1,6 @@
-uuid: 33da7f65-f76a-4c0d-a5e2-c8e1e3b758f8
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: FhVlorOLeilYjOPi9lRfSxaS8lrKDgtcy_pbc8SF-R0
 id: content_with_aside
 label: 'Split Content'
 description: ''

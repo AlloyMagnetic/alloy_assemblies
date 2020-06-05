@@ -1,9 +1,6 @@
-uuid: 5e34d4c9-6b3e-4802-90ff-eb59994ed121
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: PmQA_ePqb_nE6a3_Mxy0Bljg58taKm_dZce6sHNx-Ro
 id: columns
 label: Columns
 description: ''

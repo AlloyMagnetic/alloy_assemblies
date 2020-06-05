@@ -1,9 +1,6 @@
-uuid: 15c48293-6ff4-49b8-abb1-7c6d0e471cc9
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: opHxBnJphAbTCMgKJQFZ2sTQkexTV-B1UGHkTR7Hv0I
 id: rich_text
 label: 'Rich Text'
 description: ''

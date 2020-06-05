@@ -1,9 +1,6 @@
-uuid: 09a78bfd-e8ff-467e-9b20-4a679c31b98b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: K3zpH2y7yFyo47OQUL24Tlk4a-4nBK5NOmE72oWF6lU
 id: tiles_with_content
 label: 'Tiles with Content'
 description: ''

@@ -1,9 +1,6 @@
-uuid: 65f92a36-6f16-407d-b776-bfdc68383921
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: vj9VyVp9FWQG6mgz0jjc8aY85PD7Rkuk0eNAX30-dXg
 id: photo_gallery
 label: 'Photo Gallery'
 description: ''

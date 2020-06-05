@@ -1,4 +1,3 @@
-uuid: a7741aa7-8d32-42c0-bb39-21f5eef652df
 langcode: en
 status: true
 dependencies:
@@ -10,8 +9,6 @@ dependencies:
     - image.style.thumbnail
   module:
     - focal_point
-_core:
-  default_config_hash: _8wrdmsDnwO5yCl_zij5LxcYqQ62qrnBIphldng4NYc
 id: assembly.image_billboard.default
 targetEntityType: assembly
 bundle: image_billboard

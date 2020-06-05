@@ -1,9 +1,6 @@
-uuid: 525cb22d-3dc1-4bfe-a36f-78b36e5c1ba0
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 5MMEKfkSWVoAqUWBJvCS0IzmUCjV6KcS0Mnb5Xc8v9k
 id: form
 label: Form
 description: ''

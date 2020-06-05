@@ -1,9 +1,6 @@
-uuid: 46ca63bd-23aa-4843-a631-162248333923
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: irbpPqvDIaLOpqPmx7xVAX2yz8AbyV72C6MWN3X_n8I
 id: hubspot_form_embed
 label: 'Hubspot Form Embed'
 description: ''

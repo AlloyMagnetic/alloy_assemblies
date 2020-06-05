@@ -1,9 +1,6 @@
-uuid: b0ec1e7b-42ee-4d13-8607-042027c817df
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: kCX9x5uDf2oVwAs31e7pr2vuws6FK2i1CuvLIIGpFHM
 id: webform
 label: Webform
 description: ''

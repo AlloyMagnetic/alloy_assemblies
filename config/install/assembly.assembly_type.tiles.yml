@@ -1,9 +1,6 @@
-uuid: 258c55c0-b428-459c-bdb1-a775ff869a12
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: VsajdwqGgmaqNeMjb-AmndqZoOao44hb08kxvcb3A50
 id: tiles
 label: Tiles
 description: ''
