@@ -55,19 +55,22 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     if ($image_value) {
       $file_id = $image_value[0]['target_id'];
       $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
-      $uri = File::load($file_id)->getFileUri();
-      $url = ImageStyle::load('billboard')->buildUrl($uri);
-      $x = 0;
-      $y = 0;
-      if (isset($focal_point['x']) && isset($focal_point['y'])) {
-        $x = $focal_point['x'];
-        $y = $focal_point['y'];
+      $file = File::load($file_id);
+      if ($file) {
+        $uri = File::load($file_id)->getFileUri();
+        $url = ImageStyle::load('billboard')->buildUrl($uri);
+        $x = 0;
+        $y = 0;
+        if (isset($focal_point['x']) && isset($focal_point['y'])) {
+          $x = $focal_point['x'];
+          $y = $focal_point['y'];
+        }
+        $variables['focal_point_x'] = $x;
+        $variables['focal_point_y'] = $y;
+        $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $x . '% ' . $y . '%;');
+        $variables['focal_point'] = $focal_point;
+        $variables['attributes']->addClass('has-background');
       }
-      $variables['focal_point_x'] = $x;
-      $variables['focal_point_y'] = $y;
-      $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $x . '% ' . $y . '%;');
-      $variables['focal_point'] = $focal_point;
-      $variables['attributes']->addClass('has-background');
     }
   }
 
@@ -207,18 +210,19 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
 function alloy_assemblies_get_focal_point(EntityInterface $entity, $file_id) {
   $file = File::load($file_id);
   $focal_point = FALSE;
-
-  // Get focal point
-  $image = \Drupal::service('image.factory')->get($file->getFileUri());
-  $width = $image->getWidth();
-  $height = $image->getHeight();
   if ($file) {
-    $crop_type = \Drupal::config('focal_point.settings')->get('crop_type');
-    $crop = Crop::findCrop($file->getFileUri(), $crop_type);
-    if ($crop) {
-      $anchor = \Drupal::service('focal_point.manager')
-        ->absoluteToRelative($crop->x->value, $crop->y->value, $width, $height);
-      $focal_point = $anchor;
+    // Get focal point
+    $image = \Drupal::service('image.factory')->get($file->getFileUri());
+    $width = $image->getWidth();
+    $height = $image->getHeight();
+    if ($file) {
+      $crop_type = \Drupal::config('focal_point.settings')->get('crop_type');
+      $crop = Crop::findCrop($file->getFileUri(), $crop_type);
+      if ($crop) {
+        $anchor = \Drupal::service('focal_point.manager')
+          ->absoluteToRelative($crop->x->value, $crop->y->value, $width, $height);
+        $focal_point = $anchor;
+      }
     }
   }
 
