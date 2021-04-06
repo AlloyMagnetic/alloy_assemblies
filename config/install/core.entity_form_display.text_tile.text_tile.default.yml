@@ -10,7 +10,6 @@ dependencies:
   module:
     - alloy_assemblies
     - focal_point
-    - linkit_widget
     - text
 id: text_tile.text_tile.default
 targetEntityType: text_tile

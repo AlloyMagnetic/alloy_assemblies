@@ -2,13 +2,13 @@ name: Alloy Assemblies
 type: module
 description: Default call to action assembly types
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Alloy
 dependencies:
   - assembly
   - crop
   - focal_point
   - video
-  - linkit_widget
   - imce
   - fences
   - link
