@@ -81,9 +81,10 @@ class LinkitWidget extends LinkWidget {
    * {@inheritdoc}
    */
   public static function validateUriElement($element, FormStateInterface $form_state, $form) {
-    if (parse_url($element['#value'], PHP_URL_SCHEME) === 'internal' && !in_array(
-      $element['#value'][0], ['/', '?', '#'], TRUE,
-      ) && substr($element['#value'], 0, 7) !== '<front>') {
+    $is_internal = parse_url($element['#value'], PHP_URL_SCHEME) === 'internal';
+    $bad_chars = !in_array($element['#value'][0], ['/', '?', '#'], TRUE);
+    $not_front = substr($element['#value'], 0, 7) !== '<front>';
+    if ($is_internal && $bad_chars && $not_front) {
       $form_state->setError($element, t('Manually entered paths should start with /, ? or #.'));
       return;
     }
