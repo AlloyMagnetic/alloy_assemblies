@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.logo
+    - field.field.assembly.logo.field_image
+    - image.style.medium
+  module:
+    - image
+    - imce
+id: assembly.logo.default
+targetEntityType: assembly
+bundle: logo
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      preview_image_style: medium
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  references: true
+  status: true
+  user_id: true
+  visual_styles: true

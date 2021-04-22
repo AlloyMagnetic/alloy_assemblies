@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.image
+    - field.field.assembly.image.field_background_color
+    - field.field.assembly.image.field_image
+    - field.field.assembly.image.field_spacing
+    - image.style.medium
+  module:
+    - focal_point
+    - imce
+id: assembly.image.default
+targetEntityType: assembly
+bundle: image
+mode: default
+content:
+  field_background_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image:
+    weight: 2
+    settings:
+      preview_image_style: medium
+      preview_link: true
+      offsets: '50,50'
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_focal_point
+    region: content
+  field_spacing:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  references:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

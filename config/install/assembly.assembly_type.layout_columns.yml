@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: layout_columns
+label: 'Layout Columns'
+description: ''
+icon: null
+visual_styles: ''
+new_revision: true

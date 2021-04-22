@@ -3,11 +3,16 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.call_to_action
+    - field.field.assembly.call_to_action.field_background_color
+    - field.field.assembly.call_to_action.field_background_image
     - field.field.assembly.call_to_action.field_link
+    - field.field.assembly.call_to_action.field_spacing
     - field.field.assembly.call_to_action.field_text
   module:
     - fences
     - link
+_core:
+  default_config_hash: 93X-4rBRwdlvkL949wN7RXFHfEPvsW-WSVgRGgpOlJc
 id: assembly.call_to_action.default
 targetEntityType: assembly
 bundle: call_to_action
@@ -48,5 +53,8 @@ content:
     type: string
     region: content
 hidden:
+  field_background_color: true
+  field_background_image: true
+  field_spacing: true
   name: true
   user_id: true

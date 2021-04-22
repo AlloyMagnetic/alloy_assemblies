@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.webform
+    - core.entity_form_mode.assembly.layout_item
+    - field.field.assembly.webform.field_background_color
+    - field.field.assembly.webform.field_content
+    - field.field.assembly.webform.field_form
+    - field.field.assembly.webform.field_spacing
+    - field.field.assembly.webform.field_title
+    - field.field.assembly.webform.field_webform
+  module:
+    - webform
+_core:
+  default_config_hash: n3Dt5xOItz2AlPrKRiT2b4a6j7J1fTsBlK264kC2_Ss
+id: assembly.webform.layout_item
+targetEntityType: assembly
+bundle: webform
+mode: layout_item
+content:
+  field_webform:
+    weight: 1
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_background_color: true
+  field_content: true
+  field_form: true
+  field_spacing: true
+  field_title: true
+  references: true
+  status: true
+  user_id: true

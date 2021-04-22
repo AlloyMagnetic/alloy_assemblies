@@ -6,6 +6,8 @@ dependencies:
     - field.storage.assembly.field_link
   module:
     - link
+_core:
+  default_config_hash: nkhBekakJ7wIHOGKWOL7KIJpnjzKVEj2xkGlNduJ5vs
 id: assembly.call_to_action.field_link
 field_name: field_link
 entity_type: assembly

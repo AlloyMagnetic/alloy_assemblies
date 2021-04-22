@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: image
+label: Image
+description: ''
+icon: null
+visual_styles: ''
+new_revision: true

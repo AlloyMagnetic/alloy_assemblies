@@ -3,36 +3,35 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.hubspot_form_embed
+    - field.field.assembly.hubspot_form_embed.field_background_color
     - field.field.assembly.hubspot_form_embed.field_embed_code
-    - field.field.assembly.hubspot_form_embed.field_show_page_title
-    - field.field.assembly.hubspot_form_embed.field_title
+    - field.field.assembly.hubspot_form_embed.field_spacing
+_core:
+  default_config_hash: MYYwL63U1qPpRerS-CjeOYPNJvvTdU3JgMzhTBYagDI
 id: assembly.hubspot_form_embed.default
 targetEntityType: assembly
 bundle: hubspot_form_embed
 mode: default
 content:
+  field_background_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_embed_code:
-    weight: 5
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_show_page_title:
+  field_spacing:
     weight: 4
-    settings:
-      display_label: true
+    settings: {  }
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_title:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
+    type: options_select
     region: content
   name:
     type: string_textfield
@@ -41,6 +40,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  references:
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
@@ -52,7 +56,7 @@ content:
   visual_styles:
     type: options_select
     multiple: true
-    weight: 2
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

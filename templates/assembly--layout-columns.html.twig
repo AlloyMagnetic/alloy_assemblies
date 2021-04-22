@@ -1,0 +1,11 @@
+<div{{ attributes.addClass('assembly') }}>
+  <div class="container">
+    <div class="row">
+      {% for i in content.field_columns['#items']|keys %}
+        <div class="column col-xs-12 col-sm-{{ tablet_column_span }} col-md-{{ column_span }}">
+          {{ content.field_columns[i] }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

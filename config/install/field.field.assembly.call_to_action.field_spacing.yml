@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.call_to_action
+    - field.storage.assembly.field_spacing
+  module:
+    - options
+id: assembly.call_to_action.field_spacing
+field_name: field_spacing
+entity_type: assembly
+bundle: call_to_action
+label: Spacing
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

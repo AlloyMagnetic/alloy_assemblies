@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.call_to_action
+    - field.storage.assembly.field_background_color
+  module:
+    - options
+id: assembly.call_to_action.field_background_color
+field_name: field_background_color
+entity_type: assembly
+bundle: call_to_action
+label: 'Background Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

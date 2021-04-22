@@ -8,6 +8,11 @@ hubspot-forms:
     //js.hsforms.net/forms/v2.js: {type: external}
     js/forms.js: {}
 
+core:
+  css:
+    theme:
+      css/core.css: {}
+
 slick:
   css:
     theme:

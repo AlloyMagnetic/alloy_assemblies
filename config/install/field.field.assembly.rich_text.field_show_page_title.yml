@@ -4,12 +4,14 @@ dependencies:
   config:
     - assembly.assembly_type.rich_text
     - field.storage.assembly.field_show_page_title
+_core:
+  default_config_hash: X_-ULcJAmptMOZmRLNtxzu7u3Ll2hAG9X5y4MFs4AUg
 id: assembly.rich_text.field_show_page_title
 field_name: field_show_page_title
 entity_type: assembly
 bundle: rich_text
-label: 'Show Page Title in Assembly'
-description: ''
+label: 'This assembly provides the page title'
+description: 'The native page title will be hidden. You must provide an H1 somewhere in the content of this assembly. This box should only be checked on one assembly per page.'
 required: false
 translatable: true
 default_value:

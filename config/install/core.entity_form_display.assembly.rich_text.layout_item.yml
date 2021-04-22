@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.rich_text
+    - core.entity_form_mode.assembly.layout_item
+    - field.field.assembly.rich_text.field_background_color
+    - field.field.assembly.rich_text.field_background_image
+    - field.field.assembly.rich_text.field_content
+    - field.field.assembly.rich_text.field_show_page_title
+    - field.field.assembly.rich_text.field_spacing
+  module:
+    - text
+_core:
+  default_config_hash: A6twAYPSKj8786zu89FyuxOC1k-4ul6EVmy4GJY5ZLA
+id: assembly.rich_text.layout_item
+targetEntityType: assembly
+bundle: rich_text
+mode: layout_item
+content:
+  field_content:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_show_page_title:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_background_color: true
+  field_background_image: true
+  field_spacing: true
+  references: true
+  status: true
+  user_id: true

@@ -4,6 +4,8 @@ dependencies:
   module:
     - assembly
     - webform
+_core:
+  default_config_hash: aDswBa_mvaeLdmAsh0UBnZwF2j0FOHY7XWzRCuBnsMY
 id: assembly.field_webform
 field_name: field_webform
 entity_type: assembly

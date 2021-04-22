@@ -13,3 +13,5 @@ dependencies:
   - fences
   - link
   - webform
+  - media
+  - media_library

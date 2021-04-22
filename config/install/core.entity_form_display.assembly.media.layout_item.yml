@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.media
+    - core.entity_form_mode.assembly.layout_item
+    - field.field.assembly.media.field_background_color
+    - field.field.assembly.media.field_media
+    - field.field.assembly.media.field_spacing
+  module:
+    - inline_entity_form
+id: assembly.media.layout_item
+targetEntityType: assembly
+bundle: media
+mode: layout_item
+content:
+  field_media:
+    weight: 1
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_background_color: true
+  field_spacing: true
+  references: true
+  status: true
+  user_id: true

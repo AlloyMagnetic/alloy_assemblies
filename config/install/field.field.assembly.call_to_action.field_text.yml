@@ -4,6 +4,8 @@ dependencies:
   config:
     - assembly.assembly_type.call_to_action
     - field.storage.assembly.field_text
+_core:
+  default_config_hash: mY9tEZYDbQGA8CEAEqOajnPxU-RzLrBNBX4E59fRyR4
 id: assembly.call_to_action.field_text
 field_name: field_text
 entity_type: assembly

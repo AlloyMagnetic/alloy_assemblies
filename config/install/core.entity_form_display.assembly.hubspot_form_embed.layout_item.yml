@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.hubspot_form_embed
+    - core.entity_form_mode.assembly.layout_item
+    - field.field.assembly.hubspot_form_embed.field_background_color
+    - field.field.assembly.hubspot_form_embed.field_embed_code
+    - field.field.assembly.hubspot_form_embed.field_spacing
+_core:
+  default_config_hash: MYYwL63U1qPpRerS-CjeOYPNJvvTdU3JgMzhTBYagDI
+id: assembly.hubspot_form_embed.layout_item
+targetEntityType: assembly
+bundle: hubspot_form_embed
+mode: layout_item
+content:
+  field_embed_code:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_background_color: true
+  field_spacing: true
+  references: true
+  status: true
+  user_id: true

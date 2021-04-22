@@ -4,6 +4,8 @@ dependencies:
   config:
     - assembly.assembly_type.webform
     - field.storage.assembly.field_title
+_core:
+  default_config_hash: CzYlzNq3Wiu0iBESNc5kO5nyYnQH40V5Ni9N3lemUnI
 id: assembly.webform.field_title
 field_name: field_title
 entity_type: assembly

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.layout_split
+    - field.storage.assembly.field_split_layout
+  module:
+    - options
+id: assembly.layout_split.field_split_layout
+field_name: field_split_layout
+entity_type: assembly
+bundle: layout_split
+label: 'Split Layout'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: layout-67-33
+default_value_callback: ''
+settings: {  }
+field_type: list_string

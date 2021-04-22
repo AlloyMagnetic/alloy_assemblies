@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.image
+    - core.entity_form_mode.assembly.layout_item
+    - field.field.assembly.image.field_background_color
+    - field.field.assembly.image.field_image
+    - field.field.assembly.image.field_spacing
+    - image.style.medium
+  module:
+    - focal_point
+    - imce
+id: assembly.image.layout_item
+targetEntityType: assembly
+bundle: image
+mode: layout_item
+content:
+  field_image:
+    weight: 1
+    settings:
+      preview_image_style: medium
+      preview_link: true
+      offsets: '50,50'
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_focal_point
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_background_color: true
+  field_spacing: true
+  references: true
+  status: true
+  user_id: true

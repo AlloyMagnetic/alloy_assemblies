@@ -3,10 +3,17 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.webform
+    - field.field.assembly.webform.field_background_color
+    - field.field.assembly.webform.field_content
+    - field.field.assembly.webform.field_form
+    - field.field.assembly.webform.field_spacing
+    - field.field.assembly.webform.field_title
     - field.field.assembly.webform.field_webform
   module:
     - fences
     - webform
+_core:
+  default_config_hash: P_Uk9hLTXlpwlY4SgBK85Q84zKU_UqWUxvhSkeUUCpg
 id: assembly.webform.default
 targetEntityType: assembly
 bundle: webform
@@ -28,5 +35,10 @@ content:
     type: webform_entity_reference_entity_view
     region: content
 hidden:
+  field_background_color: true
+  field_content: true
+  field_form: true
+  field_spacing: true
+  field_title: true
   name: true
   user_id: true

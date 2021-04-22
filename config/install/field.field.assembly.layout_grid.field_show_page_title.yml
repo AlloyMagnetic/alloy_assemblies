@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.layout_grid
+    - field.storage.assembly.field_show_page_title
+id: assembly.layout_grid.field_show_page_title
+field_name: field_show_page_title
+entity_type: assembly
+bundle: layout_grid
+label: 'This assembly provides the page title'
+description: 'The native page title will be hidden. If this assembly''s title field is populated, it will be displayed as an H1. If not you must provide an H1 somewhere in the content of this assembly. This box should only be checked on one assembly per page.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

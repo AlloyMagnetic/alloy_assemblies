@@ -4,6 +4,8 @@ dependencies:
   module:
     - assembly
     - link
+_core:
+  default_config_hash: Gpa1hWivGHTh97y4yAmZClPeQsSf_rwbvJXGsq1yWRc
 id: assembly.field_link
 field_name: field_link
 entity_type: assembly

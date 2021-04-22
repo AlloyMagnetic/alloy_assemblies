@@ -1,0 +1,40 @@
+.assembly.has-background {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.assembly.layout_item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.assembly.no-top-margin {
+	margin-top: 0;
+}
+.assembly.no-bottom-margin {
+	margin-bottom: 0;
+}
+.assembly.no-bottom-margin + .assembly {
+	margin-top: 0;
+}
+.assembly.no-top-padding {
+	padding-top: 0;
+}
+.assembly.no-bottom-padding {
+	padding-bottom: 0;
+}
+
+.assembly-type-layout_grid .flex {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: -30px;
+}
+.assembly-type-layout_grid .flex .flex-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 25%;
+  max-width: 25%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px;
+}

@@ -6,6 +6,8 @@ dependencies:
     - field.storage.assembly.field_webform
   module:
     - webform
+_core:
+  default_config_hash: 2II-avZgeQAOAynI_rRzhnhWdzF6KJyh9O4MJNO-uik
 id: assembly.webform.field_webform
 field_name: field_webform
 entity_type: assembly
@@ -21,8 +23,4 @@ settings:
   handler_settings:
     target_bundles: null
     auto_create: false
-  default_data: ''
-  status: open
-  open: ''
-  close: ''
 field_type: webform

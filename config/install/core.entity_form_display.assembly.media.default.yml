@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.media
+    - field.field.assembly.media.field_background_color
+    - field.field.assembly.media.field_media
+    - field.field.assembly.media.field_spacing
+  module:
+    - media_library
+id: assembly.media.default
+targetEntityType: assembly
+bundle: media
+mode: default
+content:
+  field_background_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_media:
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_spacing:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  references:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

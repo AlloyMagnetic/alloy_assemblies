@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.media
+    - field.field.assembly.media.field_background_color
+    - field.field.assembly.media.field_media
+    - field.field.assembly.media.field_spacing
+id: assembly.media.default
+targetEntityType: assembly
+bundle: media
+mode: default
+content:
+  field_media:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_background_color: true
+  field_spacing: true
+  name: true
+  user_id: true

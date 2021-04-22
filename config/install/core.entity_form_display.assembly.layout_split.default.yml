@@ -1,0 +1,98 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - assembly.assembly_type.layout_split
+    - core.entity_form_mode.assembly.layout_item
+    - field.field.assembly.layout_split.field_background_color
+    - field.field.assembly.layout_split.field_show_page_title
+    - field.field.assembly.layout_split.field_spacing
+    - field.field.assembly.layout_split.field_split_layout
+    - field.field.assembly.layout_split.field_splits
+    - field.field.assembly.layout_split.field_title
+  module:
+    - inline_entity_form
+id: assembly.layout_split.default
+targetEntityType: assembly
+bundle: layout_split
+mode: default
+content:
+  field_background_color:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_show_page_title:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_spacing:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_split_layout:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_splits:
+    weight: 3
+    settings:
+      form_mode: layout_item
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      revision: false
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  references:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  visual_styles:
+    type: options_select
+    multiple: true
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  user_id: true

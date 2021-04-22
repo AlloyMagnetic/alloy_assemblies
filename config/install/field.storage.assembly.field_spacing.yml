@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - assembly
+    - options
+id: assembly.field_spacing
+field_name: field_spacing
+entity_type: assembly
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: no-top-margin
+      label: 'None Before'
+    -
+      value: no-bottom-margin
+      label: 'None After'
+    -
+      value: no-top-padding
+      label: 'None Inside Background Top'
+    -
+      value: no-bottom-padding
+      label: 'None Inside Background Bottom'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

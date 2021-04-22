@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - assembly
+_core:
+  default_config_hash: WlOaZ3GUYjeDG3Z8i_C2k1X9aBuEz8UkKdpfBQAq7Y4
 id: assembly.field_title
 field_name: field_title
 entity_type: assembly

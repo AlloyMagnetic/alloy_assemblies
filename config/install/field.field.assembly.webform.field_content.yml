@@ -6,6 +6,8 @@ dependencies:
     - field.storage.assembly.field_content
   module:
     - text
+_core:
+  default_config_hash: Y4JslgYFNK7l7HYNtCqjFuNNUskeksVFE58q3WVAMZk
 id: assembly.webform.field_content
 field_name: field_content
 entity_type: assembly

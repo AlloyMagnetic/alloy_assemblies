@@ -3,25 +3,50 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.call_to_action
+    - field.field.assembly.call_to_action.field_background_color
+    - field.field.assembly.call_to_action.field_background_image
     - field.field.assembly.call_to_action.field_link
+    - field.field.assembly.call_to_action.field_spacing
     - field.field.assembly.call_to_action.field_text
   module:
     - link
+    - media_library
+_core:
+  default_config_hash: _sPuVFQBY0PtouJIdU5Dq5hDphzSkdK3OtesHLf52SE
 id: assembly.call_to_action.default
 targetEntityType: assembly
 bundle: call_to_action
 mode: default
 content:
-  field_link:
+  field_background_color:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_image:
+    type: media_library_widget
     weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
     region: content
+  field_spacing:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_text:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -36,9 +61,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  references:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 2
+    weight: 1
     region: content
     settings:
       display_label: true
@@ -46,7 +76,7 @@ content:
   visual_styles:
     type: options_select
     multiple: true
-    weight: 1
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

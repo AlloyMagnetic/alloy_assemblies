@@ -3,33 +3,33 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.hubspot_form_embed
+    - field.field.assembly.hubspot_form_embed.field_background_color
     - field.field.assembly.hubspot_form_embed.field_embed_code
-    - field.field.assembly.hubspot_form_embed.field_show_page_title
-    - field.field.assembly.hubspot_form_embed.field_title
+    - field.field.assembly.hubspot_form_embed.field_spacing
   module:
-    - fences
+    - options
+_core:
+  default_config_hash: eqXJboOiStsD-hgElLZvfpCj-_6yobcyjOJ2PjygRsM
 id: assembly.hubspot_form_embed.default
 targetEntityType: assembly
 bundle: hubspot_form_embed
 mode: default
 content:
-  field_title:
+  field_background_color:
     weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      fences:
-        fences_field_tag: none
-        fences_field_classes: ''
-        fences_field_item_tag: h2
-        fences_field_item_classes: section-title
-        fences_label_tag: div
-        fences_label_classes: ''
-    type: string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_spacing:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden:
   field_embed_code: true
-  field_show_page_title: true
   name: true
   user_id: true
