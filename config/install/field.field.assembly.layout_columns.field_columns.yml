@@ -5,6 +5,7 @@ dependencies:
     - assembly.assembly_type.call_to_action
     - assembly.assembly_type.hubspot_form_embed
     - assembly.assembly_type.layout_columns
+    - assembly.assembly_type.logo
     - assembly.assembly_type.media
     - assembly.assembly_type.rich_text
     - assembly.assembly_type.webform
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       call_to_action: call_to_action
       hubspot_form_embed: hubspot_form_embed
+      logo: logo
       media: media
       rich_text: rich_text
       webform: webform

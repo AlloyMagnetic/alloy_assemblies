@@ -13,6 +13,10 @@ core:
     theme:
       css/core.css: {}
 
+logos:
+  js:
+    js/logos.js: {}
+
 slick:
   css:
     theme:

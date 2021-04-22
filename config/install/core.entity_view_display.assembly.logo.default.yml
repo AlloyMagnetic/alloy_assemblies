@@ -3,37 +3,30 @@ status: true
 dependencies:
   config:
     - assembly.assembly_type.logo
-    - field.field.assembly.logo.field_image
+    - field.field.assembly.logo.field_logo_image
   module:
-    - image
-    - user
+    - fences
 id: assembly.logo.default
 targetEntityType: assembly
 bundle: logo
 mode: default
 content:
-  field_image:
-    weight: 1
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
-    label: hidden
-    type: author
+  field_logo_image:
+    type: entity_reference_entity_view
     weight: 0
+    label: hidden
+    settings:
+      view_mode: uncropped
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: vtable
+        fences_field_item_tag: div
+        fences_field_item_classes: vcell
+        fences_label_tag: none
+        fences_label_classes: ''
     region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  name: true
+  user_id: true

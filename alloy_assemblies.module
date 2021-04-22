@@ -187,6 +187,10 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     ] + alloy_assemblies_parse_hubspot_embed($assembly->get('field_embed_code')->value);
     $variables['assembly_id'] = $assembly->get('uuid')->value;
   }
+
+  if ($type == 'logo') {
+    $variables['#attached']['library'][] = 'alloy_assemblies/logos';
+  }
 }
 
 /**

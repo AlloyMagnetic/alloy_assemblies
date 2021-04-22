@@ -38,3 +38,16 @@
   padding-right: 15px;
   margin-top: 30px;
 }
+
+.vtable {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.vtable .vcell {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
