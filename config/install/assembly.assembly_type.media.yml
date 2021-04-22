@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: media
-label: Media
-description: ''
-icon: null
-visual_styles: ''
-new_revision: true

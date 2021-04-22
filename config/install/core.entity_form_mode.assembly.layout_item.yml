@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - assembly
-id: assembly.layout_item
-label: 'Layout Item'
-targetEntityType: assembly
-cache: true

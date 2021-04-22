@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: layout_grid
-label: 'Layout Grid'
-description: ''
-icon: null
-visual_styles: ''
-new_revision: true

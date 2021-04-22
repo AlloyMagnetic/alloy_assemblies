@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: logo
-label: Logo
-description: ''
-icon: null
-visual_styles: ''
-new_revision: true

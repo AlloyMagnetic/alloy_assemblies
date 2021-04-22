@@ -246,7 +246,8 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
     'call_to_action',
     'layout_columns',
     'layout_grid',
-    'layout_split'
+    'layout_split',
+    'logo'
   ];
 
   foreach ($types as $type) {
