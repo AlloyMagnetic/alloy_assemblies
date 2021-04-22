@@ -4,7 +4,6 @@ dependencies:
   config:
     - assembly.assembly_type.call_to_action
     - assembly.assembly_type.hubspot_form_embed
-    - assembly.assembly_type.image
     - assembly.assembly_type.layout_split
     - assembly.assembly_type.media
     - assembly.assembly_type.rich_text
@@ -26,7 +25,6 @@ settings:
     target_bundles:
       call_to_action: call_to_action
       hubspot_form_embed: hubspot_form_embed
-      image: image
       media: media
       rich_text: rich_text
       webform: webform
