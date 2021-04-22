@@ -23,6 +23,13 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
 
   $type = $assembly->bundle();
 
+  if ($assembly->hasField('field_show_page_title')) {
+    $variables['title_element'] = 'h2';
+    if ($assembly->field_show_page_title->value) {
+      $variables['title_element'] = 'h1';
+    }
+  }
+
   if ($assembly->hasField('field_spacing')) {
     $spacing_values = $assembly->get('field_spacing')->getValue();
     foreach($spacing_values as $spacing) {

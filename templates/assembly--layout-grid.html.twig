@@ -1,8 +1,11 @@
 <div{{ attributes.addClass('assembly') }}>
   <div class="container">
+    {% if content.field_title %}
+      <{{ title_element }} class="layout-title">{{ content.field_title }}</{{ title_element}}>
+    {% endif %}
     <div class="row">
       {% if content %}
-        {{- content -}}
+        {{- content|without('field_title') -}}
       {% endif %}
     </div>
   </div>

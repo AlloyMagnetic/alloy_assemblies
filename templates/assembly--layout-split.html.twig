@@ -1,5 +1,8 @@
 <div{{ attributes.addClass('assembly') }}>
   <div class="container">
+    {% if content.field_title %}
+      <{{ title_element }} class="layout-title">{{ content.field_title }}</{{ title_element}}>
+    {% endif %}
     <div class="row">
       <div class="{{ left_classes }}">
         {{ content.field_splits[0] }}
