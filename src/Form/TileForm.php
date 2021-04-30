@@ -55,13 +55,13 @@ class TileForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Tile.', [
+        \Drupal::messenger()->addStatus($this->t('Created the %label Tile.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Tile.', [
+        \Drupal::messenger()->addStatus($this->t('Saved the %label Tile.', [
           '%label' => $entity->label(),
         ]));
     }

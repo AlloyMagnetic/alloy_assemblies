@@ -83,10 +83,10 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       else {
         $hs_form = alloy_assemblies_parse_hubspot_embed($embed);
         if ($hs_form && is_array($hs_form)) {
-          drupal_set_message('Embed code is for a Hubspot Form, but assembly type is Hubspot CTA');
+          \Drupal::messenger()->addStatus('Embed code is for a Hubspot Form, but assembly type is Hubspot CTA');
         }
         else {
-          drupal_set_message('Invalid embed code for Hubspot CTA');
+          \Drupal::messenger()->addStatus('Invalid embed code for Hubspot CTA');
         }
       }
     }

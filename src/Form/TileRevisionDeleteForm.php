@@ -107,7 +107,7 @@ class TileRevisionDeleteForm extends ConfirmFormBase {
     $this->TileStorage->deleteRevision($this->revision->getRevisionId());
 
     $this->logger('content')->notice('Tile: deleted %title revision %revision.', ['%title' => $this->revision->label(), '%revision' => $this->revision->getRevisionId()]);
-    drupal_set_message(t('Revision from %revision-date of Tile %title has been deleted.', ['%revision-date' => format_date($this->revision->getRevisionCreationTime()), '%title' => $this->revision->label()]));
+    \Drupal::messenger()->addStatus(t('Revision from %revision-date of Tile %title has been deleted.', ['%revision-date' => format_date($this->revision->getRevisionCreationTime()), '%title' => $this->revision->label()]));
     $form_state->setRedirect(
       'entity.tile.canonical',
        ['tile' => $this->revision->id()]
