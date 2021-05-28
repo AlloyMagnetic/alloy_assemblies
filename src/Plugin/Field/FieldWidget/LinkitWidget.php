@@ -81,6 +81,9 @@ class LinkitWidget extends LinkWidget {
    * {@inheritdoc}
    */
   public static function validateUriElement($element, FormStateInterface $form_state, $form) {
+    if (!$element['#value']) {
+      return;
+    }
     $is_internal = parse_url($element['#value'], PHP_URL_SCHEME) === 'internal';
     $bad_chars = !in_array($element['#value'][0], ['/', '?', '#'], TRUE);
     $not_front = substr($element['#value'], 0, 7) !== '<front>';
