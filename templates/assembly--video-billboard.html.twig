@@ -16,6 +16,7 @@
  */
 #}
 <div{{ attributes.addClass('assembly billboard') }}>
+  {{ title_suffix }}
   {% if content.field_video_background|render %}
     <div class="background">{{ content.field_video_background }}</div>
   {% endif %}

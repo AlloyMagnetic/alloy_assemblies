@@ -20,6 +20,7 @@
 {% set right = content.field_aside|render ? TRUE : FALSE %}
 
 <div{{ attributes.addClass('assembly') }}>
+  {{ title_suffix }}
   <div class="container">
     {% if left and right %}
     <div class="row">

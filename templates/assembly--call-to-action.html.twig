@@ -16,6 +16,7 @@
  */
 #}
 <div{{ attributes.addClass('assembly') }}>
+  {{ title_suffix }}
   <div class="container">
     {% if content.field_text|render and content.field_link|render %}
     <div class="make-row">

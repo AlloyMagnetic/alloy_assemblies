@@ -18,6 +18,7 @@
 
 {{ attach_library('alloy_assemblies/slick') }}
 <div{{ attributes.addClass('assembly assembly-photo-gallery') }}>
+  {{ title_suffix }}
   <div class="container">
     {% if content %}
       {{- content|without('field_images', 'field_images_nav') -}}
