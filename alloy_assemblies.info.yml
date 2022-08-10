@@ -8,7 +8,6 @@ dependencies:
   - assembly
   - crop
   - focal_point
-  - video
   - imce
   - fences
   - link
