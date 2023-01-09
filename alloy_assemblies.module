@@ -245,7 +245,7 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
 }
 
 function alloy_assemblies_theme_registry_alter(&$theme_registry) {
-  $path = drupal_get_path('module', 'alloy_assemblies');
+  $path = \Drupal::service('module_handler')->getModule('alloy_assemblies')->getPath();
 
   // Assembly types with a default template
   // defined in this module
