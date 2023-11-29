@@ -15,7 +15,8 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
  * Contains alloy_assemblies.module.
  */
 
-function alloy_assemblies_preprocess_assembly(&$variables) {
+function alloy_assemblies_preprocess_assembly(&$variables)
+{
   $assembly = $variables['elements']['#assembly'];
   $variables['#attached']['library'][] = 'alloy_assemblies/core';
 
@@ -32,7 +33,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
 
   if ($assembly->hasField('field_spacing')) {
     $spacing_values = $assembly->get('field_spacing')->getValue();
-    foreach($spacing_values as $spacing) {
+    foreach ($spacing_values as $spacing) {
       $variables['attributes']->addClass($spacing);
     }
   }
@@ -60,7 +61,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
           $uri = File::load($file_id)->getFileUri();
           $variables['background_image_url'] = ImageStyle::load('billboard')->buildUrl($uri);
           $variables['attributes']->addClass('has-background');
-  
+
           $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
           $variables['focal_point'] = $focal_point;
           $x = 0;
@@ -81,31 +82,46 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     $media_value = $assembly->get('field_background_image')->getValue();
     if ($media_value) {
       $media = Media::load($media_value[0]['target_id']);
-      $image_value = $media->get('field_media_image')->getValue();
-      $variables['focal_point'] = FALSE;
-      $variables['focal_point_x'] = 0;
-      $variables['focal_point_y'] = 0;
-      
-      if ($image_value) {
-        $file_id = $image_value[0]['target_id'];
-        $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
-        $uri = File::load($file_id)->getFileUri();
-        $url = ImageStyle::load('billboard')->buildUrl($uri);
-        $x = 0;
-        $y = 0;
-        if (isset($focal_point['x']) && isset($focal_point['y'])) {
-          $x = $focal_point['x'];
-          $y = $focal_point['y'];
+      if ($media->bundle() == 'image') {
+        $image_value = $media->get('field_media_image')->getValue();
+        $variables['focal_point'] = FALSE;
+        $variables['focal_point_x'] = 0;
+        $variables['focal_point_y'] = 0;
+
+        if ($image_value) {
+          $file_id = $image_value[0]['target_id'];
+          $focal_point = alloy_assemblies_get_focal_point($assembly, $file_id);
+          $uri = File::load($file_id)->getFileUri();
+          $url = ImageStyle::load('billboard')->buildUrl($uri);
+          $x = 0;
+          $y = 0;
+          if (isset($focal_point['x']) && isset($focal_point['y'])) {
+            $x = $focal_point['x'];
+            $y = $focal_point['y'];
+          }
+          $variables['bg_url'] = $url;
+          $variables['focal_point_x'] = $x;
+          $variables['focal_point_y'] = $y;
+          $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $x . '% ' . $y . '%;');
+          $variables['focal_point'] = $focal_point;
+          $variables['attributes']->addClass('has-background');
         }
-        $variables['bg_url'] = $url;
-        $variables['focal_point_x'] = $x;
-        $variables['focal_point_y'] = $y;
-        $variables['attributes']->setAttribute('style', 'background-image: url(' . $url . '); background-position: ' . $x . '% ' . $y . '%;');
-        $variables['focal_point'] = $focal_point;
-        $variables['attributes']->addClass('has-background');
+      }
+      if ($media->bundle() == 'video') {
+        $video_value = $media->get('field_media_oembed_video')->getValue();
+        $url = $video_value[0]['value'];
+        $youtube_id = alloy_assemblies_get_youtube_id($url);
+        $vimeo_id = alloy_assemblies_get_vimeo_id($url);
+        $variables['attributes']['class'][] = 'has-background has-background-video';
+
+        if ($vimeo_id) {
+          $variables['content']['background_video'] = ['#type' => 'inline_template', '#template' => '<div class="background-video"><iframe src="https://player.vimeo.com/video/{{ id }}?app_id=122963?feature=oembed&background=1" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>', '#context' => ['id' => $vimeo_id]];
+        } else {
+          $variables['content']['background_video'] = ['#type' => 'inline_template', '#template' => '<div class="background-video"><iframe src="https://www.youtube.com/embed/{{ id }}?feature=oembed&loop=1&controls=0&mute=1&autoplay=1" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>', '#context' => ['id' => $youtube_id]];
+        }
       }
     }
-  }  
+  }
 
   if ($type == 'layout_split') {
     $variables['attributes']->addClass($assembly->field_split_layout->value);
@@ -163,7 +179,7 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
     $variables['column_span'] = '';
     $variables['tablet_column_span'] = '';
     if ($col_count) {
-      $variables['column_span'] = 12/$col_count;
+      $variables['column_span'] = 12 / $col_count;
       $variables['tablet_column_span'] = $col_count > 1 ? 6 : 12;
     }
   }
@@ -173,13 +189,11 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
       $hs_cta = alloy_assemblies_hubspot_cta_from_embed($embed);
       if ($hs_cta && is_array($hs_cta)) {
         $variables['content']['hubspot_cta'] = $hs_cta + ['#theme' => 'hubspot_cta'];
-      }
-      else {
+      } else {
         $hs_form = alloy_assemblies_parse_hubspot_embed($embed);
         if ($hs_form && is_array($hs_form)) {
           \Drupal::messenger()->addError('Embed code is for a Hubspot Form, but assembly type is Hubspot CTA.');
-        }
-        else {
+        } else {
           \Drupal::messenger()->addError('Invalid embed code for Hubspot CTA');
         }
       }
@@ -200,22 +214,40 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
   }
 }
 
+function alloy_assemblies_get_youtube_id($url)
+{
+  // original regex source: https://gist.github.com/afeld/1254889#gistcomment-1253992
+  $regex = '/(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/mi';
+  preg_match($regex, $url, $matches);
+  return isset($matches[1]) ? $matches[1] : null;
+}
+
+function alloy_assemblies_get_vimeo_id($url)
+{
+  // original regex source: https://regexr.com/4lrm3
+  $regex = '/(?:http:|https:|)\/\/(?:player.|www.)?vimeo\.com\/(?:video\/|embed\/|watch\?\S*v=|v\/)?(\d*)/';
+  preg_match($regex, $url, $matches);
+  return isset($matches[1]) ? $matches[1] : null;
+}
+
 /**
  * Extract the CTA information from a HubSpot embed code.
  */
-function alloy_assemblies_hubspot_cta_from_embed($embed) {
+function alloy_assemblies_hubspot_cta_from_embed($embed)
+{
   preg_match("/hbspt.cta.load\((.*)\)/", $embed, $matches);
   if (!isset($matches[1]) || empty($matches[1])) {
     return [];
   }
-  $data = json_decode('[' . str_replace("'", '"', $matches[1]) . ']' );
+  $data = json_decode('[' . str_replace("'", '"', $matches[1]) . ']');
   return array(
     '#hubspot_id' => $data[0],
     '#uuid' => $data[1],
   );
 }
 
-function alloy_assemblies_parse_hubspot_embed($embed) {
+function alloy_assemblies_parse_hubspot_embed($embed)
+{
   preg_match('/portalId:\s*(\'|\")(\d+)(\'|\")/i', $embed, $portal);
   preg_match('/formid:\s*(\'|\")([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})(\'|\")/i', $embed, $formid);
 
@@ -225,7 +257,8 @@ function alloy_assemblies_parse_hubspot_embed($embed) {
   ];
 }
 
-function alloy_assemblies_theme($existing, $type, $theme, $path) {
+function alloy_assemblies_theme($existing, $type, $theme, $path)
+{
   $theme = [];
   $theme['hubspot_form'] = [
     'template' => 'hubspot-form',
@@ -244,7 +277,8 @@ function alloy_assemblies_theme($existing, $type, $theme, $path) {
   return $theme;
 }
 
-function alloy_assemblies_theme_registry_alter(&$theme_registry) {
+function alloy_assemblies_theme_registry_alter(&$theme_registry)
+{
   $path = \Drupal::service('module_handler')->getModule('alloy_assemblies')->getPath();
 
   // Assembly types with a default template
@@ -267,7 +301,8 @@ function alloy_assemblies_theme_registry_alter(&$theme_registry) {
   }
 }
 
-function alloy_assemblies_get_focal_point(EntityInterface $entity, $file_id) {
+function alloy_assemblies_get_focal_point(EntityInterface $entity, $file_id)
+{
   $file = File::load($file_id);
   $focal_point = FALSE;
   if ($file) {
