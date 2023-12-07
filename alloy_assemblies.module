@@ -114,10 +114,10 @@ function alloy_assemblies_preprocess_assembly(&$variables) {
         $variables['attributes']['class'][] = 'has-background has-background-video';
 
         if ($vimeo_id) {
-          $variables['content']['background_video'] = ['#type' => 'inline_template', '#template' => '<div class="background-video"><iframe src="https://player.vimeo.com/video/{{ id }}?app_id=122963?feature=oembed&background=1" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>', '#context' => ['id' => $vimeo_id]];
+          $variables['content']['background_video'] = ['#type' => 'inline_template', '#template' => '<div class="background-video"><div class="inner-background-video"><iframe src="https://player.vimeo.com/video/{{ id }}?app_id=122963?feature=oembed&background=1" allow="autoplay; fullscreen; picture-in-picture"></iframe></div></div>', '#context' => ['id' => $vimeo_id]];
         }
         else {
-          $variables['content']['background_video'] = ['#type' => 'inline_template', '#template' => '<div class="background-video"><iframe src="https://www.youtube.com/embed/{{ id }}?feature=oembed&loop=1&controls=0&mute=1&autoplay=1" allow="autoplay; fullscreen; picture-in-picture"></iframe></div>', '#context' => ['id' => $youtube_id]];
+          $variables['content']['background_video'] = ['#type' => 'inline_template', '#template' => '<div class="background-video"><div class="inner-background-video"><iframe src="https://www.youtube.com/embed/{{ id }}?feature=oembed&loop=1&controls=0&mute=1&autoplay=1" allow="autoplay; fullscreen; picture-in-picture"></iframe></div></div>', '#context' => ['id' => $youtube_id]];
         }
       }
     }
