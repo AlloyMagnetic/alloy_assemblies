@@ -7,6 +7,10 @@ hubspot-forms:
   js:
     //js.hsforms.net/forms/v2.js: {type: external}
     js/forms.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
 
 core:
   css:
@@ -16,6 +20,10 @@ core:
 logos:
   js:
     js/logos.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
 
 slick:
   css:

@@ -2,7 +2,7 @@
 
   Drupal.behaviors.alloyAssembliesLogoHeight = {
     attach: function(context, settings) {
-      $('.assembly-type-logo').once('alloyAssembliesLogoHeight').matchHeight({byRow: true});
+      $(once('alloyAssembliesLogoHeight', '.assembly-type-logo')).matchHeight({byRow: true});
     }
   }
   
