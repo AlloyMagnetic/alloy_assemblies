@@ -2,7 +2,7 @@
 
 Drupal.behaviors.alloyAssembliesHsForms = {
   attach: function(context, settings) {
-    $('[data-hs-form]').once('alloyAssembliesHsForms').each(function() {
+    $(once('alloyAssembliesHsForms', '[data-hs-form]')).each(function () {
       var $this = $(this),
         portal = $this.data('hs-portal-id'),
         formid = $this.data('hs-form-id')
